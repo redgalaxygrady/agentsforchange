@@ -1,11 +1,10 @@
-import { useState, type CSSProperties, type ReactNode, type RefObject } from 'react';
+import { useState, type ReactNode, type RefObject } from 'react';
 import { ArrowDown, ArrowRight, Download, Plus } from 'lucide-react';
 import { Avatar } from './Contact';
 import { OrgLogo } from './Logos';
 import type { LaunchState } from './launchModel';
 import { AREAS, ORGS, OWN_ID, orgFor, type Area, type Org } from './orgs';
-import { ClayRing } from './Clay';
-import { Piece, TINTS, Town } from './Town';
+import { Doodle, HeroSketch } from './Sketch';
 
 export interface BoardProps {
   state: LaunchState;
@@ -30,9 +29,9 @@ function Replace({ name, current, onYes, onNo, onDownload }: { name: string; cur
   </div>;
 }
 
-function Card({ org, current, pending, onPick, onPoint, replace }: { org: Org; current: boolean; pending: boolean; onPick: (challenge?: string) => void; onPoint: (id: string | null) => void; replace: ReactNode }) {
-  return <article className={`ac-card${org.ready ? ' is-ready' : ''}${current ? ' is-current' : ''}`} style={{ '--tint': TINTS[org.id] ?? '#e2ede6' } as CSSProperties} id={`ac-org-${org.id}`} aria-labelledby={`ac-org-${org.id}-name`} onPointerEnter={() => onPoint(org.id)} onPointerLeave={() => onPoint(null)} onFocus={() => onPoint(org.id)} onBlur={() => onPoint(null)}>
-    <div className="ac-card-stage"><Piece id={org.id}/></div>
+function Card({ org, current, pending, onPick, replace }: { org: Org; current: boolean; pending: boolean; onPick: (challenge?: string) => void; replace: ReactNode }) {
+  return <article className={`ac-card${org.ready ? ' is-ready' : ''}${current ? ' is-current' : ''}`} id={`ac-org-${org.id}`} aria-labelledby={`ac-org-${org.id}-name`}>
+    <div className="ac-card-stage"><Doodle id={org.id}/></div>
     <header className="ac-card-head">
       <OrgLogo id={org.id} size={52}/>
       <div>
@@ -53,8 +52,9 @@ function Card({ org, current, pending, onPick, onPoint, replace }: { org: Org; c
     <ul className="ac-problems">
       {org.challenges.map((challenge) => <li key={challenge}>
         <button className="ac-problem" onClick={() => onPick(challenge)} aria-label={`Work with ${org.short} on: ${challenge}`}>
-          <span className="ac-problem-text">{challenge}</span>
-          {org.ready?.challenge === challenge ? <span className="ac-problem-ready">Ready to go</span> : <ArrowRight className="ac-problem-go" size={18} aria-hidden="true"/>}
+          <span className="ac-problem-dot" aria-hidden="true"/>
+          <span className="ac-problem-text">{challenge}{org.ready?.challenge === challenge && <span className="ac-problem-ready">ready to go</span>}</span>
+          <ArrowRight className="ac-problem-go" size={18} aria-hidden="true"/>
         </button>
       </li>)}
     </ul>
@@ -65,7 +65,6 @@ function Card({ org, current, pending, onPick, onPoint, replace }: { org: Org; c
 
 export function BoardStage({ state, titleRef, busy, onChoose, onContinue, onDownload }: BoardProps) {
   const [area, setArea] = useState<Area | null>(null);
-  const [point, setPoint] = useState<string | null>(null);
   const [pending, setPending] = useState<{ id: string; challenge?: string; from: 'tag' | 'sheet' } | null>(null);
   const current = orgFor(state);
   const featured = ORGS.find((org) => org.ready);
@@ -91,14 +90,14 @@ export function BoardStage({ state, titleRef, busy, onChoose, onContinue, onDown
           </div>
         </div>
         <figure className="ac-hero-art">
-          <Town lifted={point}/>
+          <HeroSketch/>
         </figure>
       </div>
     </section>
 
     {featured && <section className="ac-meet" aria-labelledby="ac-meet-title">
       <figure className="ac-meet-photo">
-        <ClayRing size={168} pad={14}><Avatar contact={featured.contact} size={168} orgId={featured.id}/></ClayRing>
+        <Avatar contact={featured.contact} size={168} orgId={featured.id}/>
       </figure>
       <div className="ac-meet-copy">
         <blockquote><h2 id="ac-meet-title">“{featured.contact.quote}”</h2></blockquote>
@@ -118,8 +117,9 @@ export function BoardStage({ state, titleRef, busy, onChoose, onContinue, onDown
         {AREAS.map((item) => <button key={item} aria-pressed={area === item} onClick={() => setArea(item)}>{item}</button>)}
       </div>
       <div className="ac-cards">
-        {shown.map((org) => <Card key={org.id} org={org} current={current?.id === org.id} pending={pending?.id === org.id && pending.from === 'sheet'} onPick={(challenge) => pick(org.id, challenge)} onPoint={setPoint} replace={replace(org.name)}/>)}
-        <article className={`ac-card ac-card--own${current?.id === OWN_ID ? ' is-current' : ''}`} id="ac-org-own" aria-labelledby="ac-org-own-name" onPointerEnter={() => setPoint(OWN_ID)} onPointerLeave={() => setPoint(null)}>
+        {shown.map((org) => <Card key={org.id} org={org} current={current?.id === org.id} pending={pending?.id === org.id && pending.from === 'sheet'} onPick={(challenge) => pick(org.id, challenge)} replace={replace(org.name)}/>)}
+        <article className={`ac-card ac-card--own${current?.id === OWN_ID ? ' is-current' : ''}`} id="ac-org-own" aria-labelledby="ac-org-own-name">
+          <Doodle id={OWN_ID} className="ac-doodle ac-doodle--own"/>
           <header className="ac-card-head">
             <OrgLogo id={OWN_ID} size={52}/>
             <div><h3 id="ac-org-own-name">Bring your own group</h3><p>A club, a shop, a charity, a school group</p></div>

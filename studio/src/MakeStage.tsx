@@ -74,14 +74,7 @@ function EmptyWork({ onAdd }: { onAdd: (screenshot?: File) => void }) {
     if (file) onAdd(file);
   };
   return <section className={`ac-empty${drag ? ' is-drag' : ''}`} aria-labelledby="ac-empty-title" onDragOver={(event) => { event.preventDefault(); setDrag(true); }} onDragLeave={() => setDrag(false)} onDrop={(event) => { event.preventDefault(); setDrag(false); take(event.dataTransfer.files); }}>
-    <div className="ac-empty-stack" aria-hidden="true">
-      <svg viewBox="0 0 150 150" focusable="false">
-        <rect x="22" y="18" width="106" height="124" rx="22" fill="#fbe3d8" filter="url(#ac-clay)" transform="translate(-14 -10) rotate(-7 75 80)"/>
-        <rect x="22" y="18" width="106" height="124" rx="22" fill="#e5efe9" filter="url(#ac-clay)" transform="translate(-6 -4) rotate(-3 75 80)"/>
-        <rect x="22" y="18" width="106" height="124" rx="22" fill="#f3b443" filter="url(#ac-clay)"/>
-      </svg>
-      <span><Plus size={22} strokeWidth={2.6}/>V1</span>
-    </div>
+    <img className="ac-empty-art" src="/doodles/reading-side.svg" alt="" width="1024" height="768"/>
     <h2 id="ac-empty-title">Your first version goes here</h2>
     <p>Make a first version in your AI tool, then bring it back: a screenshot, a link, or a few words about what you made. Rough is good. Version 1 is meant to be improved.</p>
     <div className="ac-empty-actions">

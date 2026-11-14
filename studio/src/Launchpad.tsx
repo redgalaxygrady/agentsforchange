@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Check, Copy, ExternalLink, X } from 'lucide-react';
 import { Wordmark } from './Brand';
-import { ClayDefs, ClayDisc } from './Clay';
 import { downloadFile } from './download';
 import { blobToDataUrl, deleteImage, getImage, prepareImage, putImage } from './images';
 import {
@@ -253,15 +252,14 @@ export default function Launchpad() {
   const brief = briefFor(state);
 
   return <div className="ac">
-    <ClayDefs/>
     <a className="ac-skip" href="#ac-main">Skip to content</a>
     <header className="ac-header">
       <div className="ac-header-inner">
-        <button className="ac-brand" onClick={() => move('board')} aria-label="Agents for Change, see the problems to solve"><Wordmark clay/></button>
+        <button className="ac-brand" onClick={() => move('board')} aria-label="Agents for Change, see the problems to solve"><Wordmark/></button>
         {org && <span className="ac-project">{org.name}</span>}
         {org && <nav className="ac-steps" aria-label="Project stages">
           {stages.map((item, index) => <button key={item.id} aria-current={step === item.id ? 'step' : undefined} onClick={() => move(item.id)}>
-            <ClayDisc size={30} colour={step === item.id ? '#17302e' : '#e6ebe4'}>{index + 1}</ClayDisc><span className="ac-steps-long">{item.label}</span><span className="ac-steps-short">{item.short}</span>
+            <b className="ac-disc">{index + 1}</b><span className="ac-steps-long">{item.label}</span><span className="ac-steps-short">{item.short}</span>
             {item.id === 'try' && state.versions.length > 0 && <i aria-label={`${state.versions.length} ${state.versions.length === 1 ? 'version' : 'versions'}`}>{state.versions.length}</i>}
           </button>)}
         </nav>}

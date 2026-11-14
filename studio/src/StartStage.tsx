@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { ArrowLeft, ArrowRight, Check, ChevronDown, ExternalLink, FileText } from 'lucide-react';
 import type { Material } from './brief';
-import { ClayDisc } from './Clay';
 import { ContactCard } from './Contact';
 import { OrgLogo } from './Logos';
 import { briefFor, chosenChallenge, orgFor, OWN_ID, type OrgView } from './orgs';
@@ -101,7 +100,7 @@ export function StartStage({ state, titleRef, onField, onMove, onOpen }: StagePr
     <OrgHero org={org} state={state} titleRef={titleRef} onField={onField} onMove={onMove}/>
 
     <section className="ac-block" aria-labelledby="ac-job-title">
-      <div className="ac-block-head"><ClayDisc className="ac-step">1</ClayDisc><div><h2 id="ac-job-title">{org.own ? 'What problem could you help them with?' : 'Pick one problem'}</h2><p>{org.own ? 'One thing is plenty. You can sharpen it after you’ve talked to them.' : `Each is in ${org.contact?.name.split(' ')[0] ?? 'their'}’s words. Pick the one you’d most like to help with.`}</p></div></div>
+      <div className="ac-block-head"><span className="ac-step">1</span><div><h2 id="ac-job-title">{org.own ? 'What problem could you help them with?' : 'Pick one problem'}</h2><p>{org.own ? 'One thing is plenty. You can sharpen it after you’ve talked to them.' : `Each is in ${org.contact?.name.split(' ')[0] ?? 'their'}’s words. Pick the one you’d most like to help with.`}</p></div></div>
       <JobPicker key={org.id} org={org} state={state} onField={onField}/>
       {challenge && brief.task && <div className="ac-job-brief" aria-live="polite">
         <p>{brief.task}</p>
@@ -110,7 +109,7 @@ export function StartStage({ state, titleRef, onField, onMove, onOpen }: StagePr
     </section>
 
     <section className="ac-block" aria-labelledby="ac-who-title">
-      <div className="ac-block-head"><ClayDisc className="ac-step">2</ClayDisc><div><h2 id="ac-who-title">Who are you making this for?</h2><p>Picture one real person. The more specific, the better your work will fit.</p></div></div>
+      <div className="ac-block-head"><span className="ac-step">2</span><div><h2 id="ac-who-title">Who are you making this for?</h2><p>Picture one real person. The more specific, the better your work will fit.</p></div></div>
       <label className="ac-sr" htmlFor="lp-audience">Who are you making this for?</label>
       <textarea id="lp-audience" rows={1} className="ac-input ac-input--big ac-grow" value={state.audience} onChange={(event) => onField('audience', event.target.value)} placeholder="Someone you could actually show it to"/>
       <div className="ac-chips" aria-label="Ideas to start from">
@@ -120,7 +119,7 @@ export function StartStage({ state, titleRef, onField, onMove, onOpen }: StagePr
     </section>
 
     <section className="ac-block" aria-labelledby="ac-what-title">
-      <div className="ac-block-head"><ClayDisc className="ac-step">3</ClayDisc><div><h2 id="ac-what-title">What might you make? <span className="ac-soft">optional</span></h2><p>Most people decide after they’ve talked to their person. If you leave it, your brief asks the AI for a few options to take to them.</p></div></div>
+      <div className="ac-block-head"><span className="ac-step">3</span><div><h2 id="ac-what-title">What might you make? <span className="ac-soft">optional</span></h2><p>Most people decide after they’ve talked to their person. If you leave it, your brief asks the AI for a few options to take to them.</p></div></div>
       <label className="ac-sr" htmlFor="lp-format">What might you make?</label>
       <input id="lp-format" className="ac-input" value={state.format} onChange={(event) => onField('format', event.target.value)} placeholder="A poster, a page, a short video, a sign for the door…"/>
       {ready && <div className="ac-ready">
@@ -130,13 +129,13 @@ export function StartStage({ state, titleRef, onField, onMove, onOpen }: StagePr
     </section>
 
     <section className="ac-block" aria-labelledby="ac-angle-title">
-      <div className="ac-block-head"><ClayDisc className="ac-step">4</ClayDisc><div><h2 id="ac-angle-title">What will AI do, and what will you do? <span className="ac-soft">optional</span></h2><p>Rough is fine. You’ll find out more once you start.</p></div></div>
+      <div className="ac-block-head"><span className="ac-step">4</span><div><h2 id="ac-angle-title">What will AI do, and what will you do? <span className="ac-soft">optional</span></h2><p>Rough is fine. You’ll find out more once you start.</p></div></div>
       <label className="ac-sr" htmlFor="lp-approach">What will AI do, and what will you do?</label>
       <textarea id="lp-approach" rows={3} value={state.approach} onChange={(event) => onField('approach', event.target.value)} placeholder="AI can draft and suggest. I’ll check the facts and decide what goes in."/>
     </section>
 
     <section className="ac-block ac-facts" aria-labelledby="ac-facts-title" id="lp-source-pack">
-      <div className="ac-block-head"><ClayDisc className="ac-step ac-step--quiet" colour="#d5e9dc"><Check size={18} strokeWidth={3}/></ClayDisc><div><h2 id="ac-facts-title">Fact-check kit</h2><p>{brief.factCheckIntro}</p></div></div>
+      <div className="ac-block-head"><span className="ac-step ac-step--quiet"><Check size={18} strokeWidth={3}/></span><div><h2 id="ac-facts-title">Fact-check kit</h2><p>{brief.factCheckIntro}</p></div></div>
       {brief.sources.length > 0 && <ul className="ac-sources">{brief.sources.map((source) => <li key={source.id}><a href={source.url} target="_blank" rel="noreferrer"><strong>{source.title}</strong><ExternalLink size={14}/></a><small>{source.description}</small></li>)}</ul>}
       <div className="ac-field"><label htmlFor="lp-source-notes">{brief.sources.length ? 'Facts to use, or questions to check' : 'Sources they trust, facts to use, or questions to check'} <span className="ac-soft">optional</span></label><textarea id="lp-source-notes" rows={2} value={state.sourceNotes} onChange={(event) => onField('sourceNotes', event.target.value)} placeholder={brief.factQuestionsPlaceholder}/></div>
     </section>

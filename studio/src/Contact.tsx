@@ -1,5 +1,4 @@
 import { ChevronDown } from 'lucide-react';
-import { ClayRing } from './Clay';
 import { OrgLogo } from './Logos';
 import { initials, type Contact } from './orgs';
 
@@ -16,7 +15,7 @@ export function ContactCard({ contact, orgId, orgName }: { contact: Contact; org
   const first = contact.name.split(' ')[0];
   return <figure className="ac-contact">
     <div className="ac-contact-who">
-      <ClayRing size={84} pad={8}><Avatar contact={contact} size={84} orgId={orgId}/></ClayRing>
+      <Avatar contact={contact} size={84} orgId={orgId}/>
       <figcaption><strong>{contact.name}</strong><span>{contact.role}, {orgName}</span></figcaption>
     </div>
     <blockquote className="ac-contact-quote"><p>“{contact.quote}”</p></blockquote>
