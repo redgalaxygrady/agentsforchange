@@ -1,0 +1,15 @@
+@import '@fontsource/caprasimo/latin-400.css';
+@import '@fontsource/atkinson-hyperlegible/latin-400.css';
+@import '@fontsource/atkinson-hyperlegible/latin-400-italic.css';
+@import '@fontsource/atkinson-hyperlegible/latin-700.css';
+:root { color: #17302e; background: #eef1ec; font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; font-synthesis: none; -webkit-font-smoothing: antialiased; accent-color: #1f5f5b; }
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #eef1ec; }
+::selection { background: #f3b443; color: #17302e; }
+button, input, select, textarea { font: inherit; }
+button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
+button { border: 0; background: none; color: inherit; cursor: pointer; }
+button:disabled { cursor: not-allowed; }
+svg { flex-shrink: 0; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
