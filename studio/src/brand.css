@@ -1,5 +1,5 @@
-/* The mark and wordmark: a thumbprint in marigold clay, and the name set soft and heavy like a word rolled from clay. */
-.ac-wordmark { display: inline-flex; align-items: center; gap: .34em; color: #17302e; line-height: 1; white-space: nowrap; }
-.ac-wordmark.is-light { color: #fdf8ee; }
+/* The mark and wordmark: an inked thumbprint on a dab of highlighter, and the name in Fraunces like the title on a notebook. */
+.ac-wordmark { display: inline-flex; align-items: center; gap: .34em; color: #1d2b3a; line-height: 1; white-space: nowrap; }
+.ac-wordmark.is-light { color: #f6f1e6; }
 .ac-wordmark-mark { width: 1.4em; height: 1.4em; flex: none; margin-block: -.2em; overflow: visible; }
-.ac-wordmark-word { font-family: 'Caprasimo', 'Cooper Black', Georgia, serif; font-weight: 400; font-size: .92em; letter-spacing: -.005em; }
+.ac-wordmark-word { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: .95em; letter-spacing: -.015em; }

@@ -1,13 +1,10 @@
 import './brand.css';
 
-/**
- * The mark: a thumbprint pressed into a pat of marigold clay. Someone made this, by hand.
- * `clay` lights it with the page's clay filter; leave it off where <ClayDefs/> is not mounted, such as the downloaded record.
- */
-export function Mark({ size = 28, className, clay = false }: { size?: number; className?: string; clay?: boolean }) {
+/** The mark: an inked thumbprint on a dab of highlighter. Someone made this, by hand. */
+export function Mark({ size = 28, className }: { size?: number; className?: string }) {
   return <svg className={className} width={size} height={size} viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-    <rect x="4" y="5" width="56" height="54" rx="20" fill="#f3b443" filter={clay ? 'url(#ac-clay-sm)' : undefined}/>
-    <g fill="none" stroke="#b9741b" strokeWidth="2.6" strokeLinecap="round" opacity=".85">
+    <path d="M33 4c15 0 27 11 27 27 0 16-12 29-28 29C16 60 4 48 5 32 6 16 18 4 33 4z" fill="#e4f26a"/>
+    <g fill="none" stroke="#1d2b3a" strokeWidth="2.8" strokeLinecap="round">
       <path d="M32 22c-6 0-10.5 4.6-10.5 10.4 0 4.3 2 8 5.2 10.3"/>
       <path d="M32 27c-3.2 0-5.6 2.5-5.6 5.6 0 2.4 1.1 4.4 2.9 5.7"/>
       <path d="M32 32.2c0 2.6.9 5.2 2.6 7.2"/>
@@ -19,10 +16,10 @@ export function Mark({ size = 28, className, clay = false }: { size?: number; cl
   </svg>;
 }
 
-/** The mark and the wordmark, set in Caprasimo. Size follows the parent's font size. */
-export function Wordmark({ light = false, clay = false }: { light?: boolean; clay?: boolean }) {
+/** The mark and the wordmark, set in Fraunces. Size follows the parent's font size. */
+export function Wordmark({ light = false }: { light?: boolean }) {
   return <span className={`ac-wordmark${light ? ' is-light' : ''}`}>
-    <Mark className="ac-wordmark-mark" clay={clay}/>
+    <Mark className="ac-wordmark-mark"/>
     <span className="ac-wordmark-word">Agents for Change</span>
   </span>;
 }
