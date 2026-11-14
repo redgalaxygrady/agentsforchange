@@ -1,0 +1,5 @@
+/* The mark and wordmark: a thumbprint in marigold clay, and the name set soft and heavy like a word rolled from clay. */
+.ac-wordmark { display: inline-flex; align-items: center; gap: .34em; color: #17302e; line-height: 1; white-space: nowrap; }
+.ac-wordmark.is-light { color: #fdf8ee; }
+.ac-wordmark-mark { width: 1.4em; height: 1.4em; flex: none; margin-block: -.2em; overflow: visible; }
+.ac-wordmark-word { font-family: 'Caprasimo', 'Cooper Black', Georgia, serif; font-weight: 400; font-size: .92em; letter-spacing: -.005em; }
