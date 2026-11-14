@@ -98,14 +98,14 @@ export function BoardStage({ state, titleRef, busy, onChoose, onContinue, onDown
     <section className="ac-parents" aria-labelledby="ac-parents-title">
       <div className="ac-parents-copy">
         <p className="ac-kicker">For parents and whānau</p>
-        <h2 id="ac-parents-title">Real work with AI, in your community, in four weeks</h2>
+        <h2 id="ac-parents-title">Real work with AI, in your community, in four days</h2>
         <p className="ac-parents-lede">Employers want young people who can use AI to solve real problems. School mostly prepares them for exams, and can’t easily give every teen a real project with a local group. That’s what a sprint does.</p>
         <a className="ac-btn ac-btn--quiet" href={EXAMPLE_HASH}>See a finished record <ArrowRight size={17}/></a>
         <p className="ac-parents-note">A made-up example of what a future builder leaves with.</p>
       </div>
       <ul className="ac-parents-points">
         <li><strong>For 16 to 18-year-olds who are keen.</strong> It works best when your teen wants to do it.</li>
-        <li><strong>In person, over four weeks.</strong> Future builders work in a room together with a facilitator, the way a modern team does.</li>
+        <li><strong>In person, over four days.</strong> Future builders work in a room together with a facilitator, the way a modern team does.</li>
         <li><strong>Matched by hand.</strong> Each future builder is paired with a local group and a problem that fits what they’re into, like sport, design or marketing, with an industry expert from that field.</li>
         <li><strong>Something to show for it.</strong> A portfolio record of what they made, what AI did and what they decided, shared at a portfolio fair at the end.</li>
       </ul>

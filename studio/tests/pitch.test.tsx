@@ -19,7 +19,9 @@ describe('what the landing page tells parents and community groups', () => {
     const html = board();
     expect(html).toContain('For parents and whānau');
     expect(html).toContain('For 16 to 18-year-olds who are keen.');
-    expect(html).toContain('In person, over four weeks.');
+    expect(html).toContain('In person, over four days.');
+    expect(html).toContain('in your community, in four days');
+    expect(html).not.toMatch(/four[- ]week/i);
     expect(html).toContain('Matched by hand.');
     expect(html).toContain(`href="${EXAMPLE_HASH}"`);
     expect(html).toContain('A made-up example of what a future builder leaves with.');
@@ -59,6 +61,11 @@ describe('the example record', () => {
     expect(page).toContain('Example portfolio record (made up)');
     expect(page).toContain('A made-up example to show what a finished record looks like.');
     expect(page).toContain('is a made-up example organisation');
+  });
+
+  it('says a sprint runs over four days', () => {
+    expect(page).toContain('At the end of a four-day sprint');
+    expect(page).not.toMatch(/four[- ]week/i);
   });
 
   it('shows a finished record, with every part written in', () => {

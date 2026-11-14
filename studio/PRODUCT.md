@@ -8,7 +8,7 @@ web
 
 ## Users
 
-- **Future builders:** young people, late high school and uni students (about 16 to 24), from any discipline. Most cannot code. They use the workspace in short sessions during a four-week, in-person sprint, often on a phone or a borrowed laptop, with a facilitator in the room.
+- **Future builders:** young people, late high school and uni students (about 16 to 24), from any discipline. Most cannot code. They use the workspace in short sessions during a four-day, in-person sprint, often on a phone or a borrowed laptop, with a facilitator in the room.
 - **Facilitators and community partners** look at the landing page and the downloaded record to understand what a future builder did. They are secondary viewers, not operators.
 
 ## Product Purpose
