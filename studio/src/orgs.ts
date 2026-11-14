@@ -31,7 +31,7 @@ export interface Org {
   challenges: string[];
   audienceIdeas: [string, string, string];
   /**
-   * A challenge that comes built out, with the organisation's own material and a fact-check kit for the Brief.
+   * A challenge that comes built out, with its own task, ideas and AI ground rules for the Brief.
    * The board and the problem picker don't advertise it: problems are talked through with the group first.
    */
   ready?: { challenge: string; brief: Brief };
@@ -149,7 +149,7 @@ function emphasis(name: string): string | undefined {
   return words.length > 2 ? words.slice(-2).join(' ') : undefined;
 }
 
-/** A lighter brief for an organisation's challenge that has no material or fact-check kit yet. */
+/** A lighter brief for any other challenge an organisation lists. */
 export function orgBrief(org: Org, challenge: string): Brief {
   const whose = org.contact.name.split(' ')[0];
   return {
@@ -159,7 +159,7 @@ export function orgBrief(org: Org, challenge: string): Brief {
     audienceIdeas: org.audienceIdeas,
     starter: UNDERSTAND_FIRST,
     sources: [],
-    factCheckIntro: `This challenge has no fact-check kit yet. Ask ${whose} which sources they trust, and note what you find here.`,
+    factCheckIntro: `AI tools get details wrong. Ask ${whose} which sources they trust, and note what you find here.`,
     factQuestionsPlaceholder: 'What do they already do about this? Who could I talk to?',
     promptIntro: `I am working with ${org.name}, a ${org.kind.toLowerCase()} (a made-up example for practice). What they do: ${org.about} The challenge I picked: ${challenge.trim() || NO_CHALLENGE}`,
     promptRules: GENERAL_RULES,
@@ -179,7 +179,7 @@ export function ownBrief(state: Pick<LaunchState, 'customOrg' | 'customAbout' | 
     audienceIdeas: ['Someone from the group who has this challenge', 'A person the group is trying to reach', 'Someone new to the group'],
     starter: UNDERSTAND_FIRST,
     sources: [],
-    factCheckIntro: `You brought this one, so the fact-check kit is yours to build. Ask ${org || 'them'} which sources they trust, and note what you find here.`,
+    factCheckIntro: `AI tools get details wrong. Ask ${org || 'them'} which sources they trust, and note what you find here.`,
     factQuestionsPlaceholder: 'What do they already do about this? Who could I talk to?',
     promptIntro: `I am working with ${org || 'an organisation I chose'}, which I brought myself.${about ? ` What they do: ${about}` : ''} The challenge I picked: ${state.challenge.trim() || NO_CHALLENGE}`,
     promptRules: GENERAL_RULES,
