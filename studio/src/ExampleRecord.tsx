@@ -10,7 +10,7 @@ export function ExampleRecord({ titleRef, onBack }: { titleRef: RefObject<HTMLHe
     <header className="ac-page-head">
       <button className="ac-link ac-link--ink" onClick={onBack}><ArrowLeft size={16}/> Back to the problems</button>
       <h1 ref={titleRef} tabIndex={-1}>What a future builder <em>leaves with</em></h1>
-      <p className="ac-lede">At the end of a four-week sprint, each future builder has a portfolio record like this one: what they made, who they tried it with, what changed, and where AI helped, in their own words.</p>
+      <p className="ac-lede">At the end of a four-day sprint, each future builder has a portfolio record like this one: what they made, who they tried it with, what changed, and where AI helped, in their own words.</p>
       <p className="ac-example-note"><strong>This is a made-up example.</strong> Mia, Northgate Community Food Bank, Hana and everything in this record are invented to show what a finished record looks like. It is not a real project or result.</p>
     </header>
     <div className="ac-paper" aria-label="Example portfolio record">
