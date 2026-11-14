@@ -1,4 +1,4 @@
-# Agents of Change workspace
+# Agents For Change workspace
 
 A Vite + React + TypeScript app. It runs entirely in the browser.
 

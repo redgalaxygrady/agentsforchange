@@ -1,4 +1,4 @@
-# Agents of Change
+# Agents For Change
 
 Young people (we call them future builders) learn to work with AI by solving real problems for community partners. Over a four-week sprint each future builder picks a local group and one of its problems, makes something with AI, tries it with real people, improves it, and leaves with a portfolio record that shows what they decided, what AI did, and what changed.
 

@@ -20,6 +20,6 @@ export function Mark({ size = 28, className }: { size?: number; className?: stri
 export function Wordmark({ light = false }: { light?: boolean }) {
   return <span className={`ac-wordmark${light ? ' is-light' : ''}`}>
     <Mark className="ac-wordmark-mark"/>
-    <span className="ac-wordmark-word">Agents of Change</span>
+    <span className="ac-wordmark-word">Agents For Change</span>
   </span>;
 }

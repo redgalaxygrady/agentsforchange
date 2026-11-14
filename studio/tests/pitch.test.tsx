@@ -4,7 +4,7 @@ import { BoardStage } from '../src/BoardStage';
 import { Wordmark } from '../src/Brand';
 import { EXAMPLE_HASH, EXAMPLE_RECORD } from '../src/exampleProject';
 import { ExampleRecord } from '../src/ExampleRecord';
-import { initialLaunch, MOMENTS } from '../src/launchModel';
+import { initialLaunch, LAUNCH_STAGE_STORAGE_KEY, LAUNCH_STORAGE_KEY, MOMENTS } from '../src/launchModel';
 import { ORGS, orgById, PARTNER_SIGNUP_URL } from '../src/orgs';
 import { recordHTML } from '../src/recordExport';
 import { StartStage } from '../src/StartStage';
@@ -77,8 +77,13 @@ describe('the example record', () => {
 });
 
 describe('the name', () => {
-  it('is Agents of Change', () => {
-    expect(renderToStaticMarkup(<Wordmark/>)).toContain('Agents of Change');
-    expect(recordHTML(initialLaunch(), {})).toContain('Recorded in Agents of Change');
+  it('is Agents For Change', () => {
+    expect(renderToStaticMarkup(<Wordmark/>)).toContain('Agents For Change');
+    expect(recordHTML(initialLaunch(), {})).toContain('Recorded in Agents For Change');
+  });
+
+  it('keeps the old saving keys, so work saved under the earlier name still loads', () => {
+    expect(LAUNCH_STORAGE_KEY).toBe('agents-for-change.project.v1');
+    expect(LAUNCH_STAGE_STORAGE_KEY).toBe('agents-for-change.stage.v1');
   });
 });

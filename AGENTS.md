@@ -1,6 +1,6 @@
-# Agents of Change: notes for anyone working on this repo
+# Agents For Change: notes for anyone working on this repo
 
-Agents of Change is a four-week sprint where young people (future builders) build AI-native skills by solving real problems for community partners. This repo is the workspace they use during a sprint. See `README.md` for what it does and `studio/README.md` for how it's built.
+Agents For Change is a four-week sprint where young people (future builders) build AI-native skills by solving real problems for community partners. This repo is the workspace they use during a sprint. See `README.md` for what it does and `studio/README.md` for how it's built.
 
 ## What the workspace has to protect
 
