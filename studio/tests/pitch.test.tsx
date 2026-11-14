@@ -4,7 +4,7 @@ import { BoardStage } from '../src/BoardStage';
 import { Wordmark } from '../src/Brand';
 import { EXAMPLE_HASH, EXAMPLE_RECORD } from '../src/exampleProject';
 import { ExampleRecord } from '../src/ExampleRecord';
-import { initialLaunch, LAUNCH_STAGE_STORAGE_KEY, LAUNCH_STORAGE_KEY, MOMENTS } from '../src/launchModel';
+import { initialLaunch, LAUNCH_STAGE_STORAGE_KEY, LAUNCH_STORAGE_KEY, launchPrompt, MOMENTS } from '../src/launchModel';
 import { ORGS, orgById, PARTNER_SIGNUP_URL } from '../src/orgs';
 import { recordHTML } from '../src/recordExport';
 import { StartStage } from '../src/StartStage';
@@ -104,5 +104,13 @@ describe('picking a problem', () => {
     }
     expect(start).toContain('Talk them through together, then pick the one you’d most like to help with.');
     expect(board()).toContain('Start with a conversation');
+  });
+
+  it('hands over no week of donations or fact-check kit on the Brief either: the future builder gets them from the group', () => {
+    const start = renderToStaticMarkup(<StartStage state={returning} titleRef={{ current: null }} onField={noop} onMove={noop} onOpen={noop}/>);
+    expect(start).not.toMatch(/week of donations|fact-check kit/i);
+    expect(start).not.toContain('mpi.govt.nz');
+    expect(start).toContain('Ask Raewyn which sources the food rescue trusts');
+    expect(launchPrompt(returning)).not.toContain('The material we are working through');
   });
 });

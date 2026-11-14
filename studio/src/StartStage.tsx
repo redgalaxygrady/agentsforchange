@@ -83,8 +83,8 @@ export function StartStage({ state, titleRef, onField, onMove, onOpen }: StagePr
   const challenge = chosenChallenge(state);
   const hasVersions = state.versions.length > 0;
   const ready = Boolean(challenge && state.audience.trim());
-  const kit = brief.sources.length ? 'the fact-check kit' : 'ground rules';
-  const carries = brief.material ? `${brief.material.name} and ${kit}` : kit;
+  const carried = [brief.material?.name, brief.sources.length ? 'the fact-check kit' : undefined].filter(Boolean).join(' and ');
+  const carries = brief.material ? `your choices, ${carried}` : carried ? `your choices and ${carried}` : 'your choices';
 
   if (!org) {
     return <div className="ac-page ac-start">
@@ -123,7 +123,7 @@ export function StartStage({ state, titleRef, onField, onMove, onOpen }: StagePr
       <label className="ac-sr" htmlFor="lp-format">What might you make?</label>
       <input id="lp-format" className="ac-input" value={state.format} onChange={(event) => onField('format', event.target.value)} placeholder="A poster, a page, a short video, a sign for the door…"/>
       {ready && <div className="ac-ready">
-        <p>That’s enough to start. The rest of this page is optional, and your brief already carries {carries}.</p>
+        <p>That’s enough to start. The rest of this page is optional{carried ? `, and your brief already carries ${carried}` : ''}.</p>
         <button className="ac-btn ac-btn--go" onClick={onOpen}><FileText size={17}/> Get your brief</button>
       </div>}
     </section>
@@ -135,7 +135,7 @@ export function StartStage({ state, titleRef, onField, onMove, onOpen }: StagePr
     </section>
 
     <section className="ac-block ac-facts" aria-labelledby="ac-facts-title" id="lp-source-pack">
-      <div className="ac-block-head"><span className="ac-step ac-step--quiet"><Check size={18} strokeWidth={3}/></span><div><h2 id="ac-facts-title">Fact-check kit</h2><p>{brief.factCheckIntro}</p></div></div>
+      <div className="ac-block-head"><span className="ac-step ac-step--quiet"><Check size={18} strokeWidth={3}/></span><div><h2 id="ac-facts-title">Check the facts</h2><p>{brief.factCheckIntro}</p></div></div>
       {brief.sources.length > 0 && <ul className="ac-sources">{brief.sources.map((source) => <li key={source.id}><a href={source.url} target="_blank" rel="noreferrer"><strong>{source.title}</strong><ExternalLink size={14}/></a><small>{source.description}</small></li>)}</ul>}
       <div className="ac-field"><label htmlFor="lp-source-notes">{brief.sources.length ? 'Facts to use, or questions to check' : 'Sources they trust, facts to use, or questions to check'} <span className="ac-soft">optional</span></label><textarea id="lp-source-notes" rows={2} value={state.sourceNotes} onChange={(event) => onField('sourceNotes', event.target.value)} placeholder={brief.factQuestionsPlaceholder}/></div>
     </section>
@@ -143,7 +143,7 @@ export function StartStage({ state, titleRef, onField, onMove, onOpen }: StagePr
     <section className="ac-launch" aria-labelledby="ac-launch-title">
       <div className="ac-launch-copy">
         <h2 id="ac-launch-title">Take your brief to an AI tool</h2>
-        <p>Your brief carries {brief.material ? `your choices, ${carries}` : `your choices and ${carries}`}, plus ground rules so the AI doesn’t make things up. Paste it in and start making.</p>
+        <p>Your brief carries {carries}, plus ground rules so the AI doesn’t make things up. Paste it in and start making.</p>
       </div>
       <div className="ac-launch-actions">
         <button className="ac-btn ac-btn--go ac-btn--big" onClick={onOpen}><FileText size={18}/> Get your brief</button>

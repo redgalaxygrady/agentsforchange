@@ -12,7 +12,6 @@ import { StartStage } from '../src/StartStage';
 // Files in public/, to check the headshots the board points at are there.
 const PUBLIC_FILES = Object.keys(import.meta.glob('../public/**/*'));
 const HARBOURSIDE = ORGS.find((org) => org.ready)!;
-const material = BRIEF.material!;
 const noop = () => undefined;
 
 function project(fields: Partial<ReturnType<typeof initialLaunch>> = {}) {
@@ -70,22 +69,22 @@ describe('which brief a project gets', () => {
 });
 
 describe('the Harbourside brief', () => {
-  it('is a week of made-up donations, labelled as practice', () => {
-    expect(material.rows).toHaveLength(12);
-    for (const row of material.rows) expect(row).toHaveLength(material.columns.length);
-    expect(material.note).toContain('Made up for practice');
+  it('is labelled as practice, and hands over no material or sources of its own', () => {
+    expect(BRIEF.material).toBeUndefined();
+    expect(BRIEF.sources).toEqual([]);
     expect(BRIEF.affiliation).toContain('made up');
   });
 
-  it('shows Raewyn’s words in full, and the week of donations behind a closed toggle', () => {
+  it('shows Raewyn’s words in full, and sends the future builder to her for the week’s food and the sources to trust', () => {
     const html = start();
     for (const line of HARBOURSIDE.contact.transcript!) expect(html).toContain(`<p>${line}</p>`);
     expect(html).toContain('Read what Raewyn said');
-    expect(html).toMatch(/<details class="ac-material"><summary>See the week of donations/);
-    const at = html.indexOf('<details class="ac-material">');
-    const sheet = html.slice(at, html.indexOf('</details>', at));
-    expect(sheet.match(/<tr role="row">/g)).toHaveLength(material.rows.length + 1);
-    expect(html).toContain('your brief already carries the week of donations and the fact-check kit.');
+    expect(html).toContain('Find out from Raewyn what a usual week brings');
+    expect(html).toContain('Ask Raewyn which sources the food rescue trusts');
+    expect(html).not.toContain('ac-material');
+    expect(html).not.toContain('ac-sources');
+    expect(html).toContain('That’s enough to start. The rest of this page is optional.');
+    expect(html).toContain('Your brief carries your choices, plus ground rules so the AI doesn’t make things up.');
   });
 
   it('leaves what to make until after talking to the person', () => {
@@ -96,12 +95,11 @@ describe('the Harbourside brief', () => {
     expect(start(project({ audience: '' }))).not.toContain('That’s enough to start.');
   });
 
-  it('carries every row and ground rule in the AI brief, with the food safety calls left to the food rescue', () => {
+  it('carries every ground rule in the AI brief, with the food safety calls left to the food rescue', () => {
     const prompt = launchPrompt(project());
-    const at = prompt.indexOf('The material we are working through: A week of donations.');
-    expect(at).toBeGreaterThan(prompt.indexOf('What AI will do, and what I will do:'));
-    expect(at).toBeLessThan(prompt.indexOf('Official reference pack'));
-    for (const row of material.rows) expect(prompt).toContain(row.join(' | '));
+    expect(prompt).not.toContain('The material we are working through');
+    expect(prompt).toContain('Ask me which sources the organisation trusts before you rely on any.');
+    expect(prompt).toContain('Start by asking me what the food rescue told me about a usual week');
     for (const rule of BRIEF.promptRules) expect(prompt).toContain(`- ${rule}`);
     expect(prompt).toContain('Do not decide whether food is safe to eat');
     expect(prompt).toContain('I’ll decide where each item goes.');
@@ -119,16 +117,17 @@ describe('the Harbourside brief', () => {
     expect(sendingNote(prompt)).toContain('too long to fit in a link');
   });
 
-  it('reminds the future builder on Make & try to check what the AI says the sources say', () => {
+  it('reminds the future builder on Make & try to check facts with the group', () => {
     const html = renderToStaticMarkup(<MakeStage state={project()} titleRef={{ current: null }} onField={noop} onMove={noop} onOpen={noop} images={{}} imageNotes={{}} onVersionField={noop} onAddVersion={noop} onRemoveVersion={noop} onImage={noop} onRemoveImage={noop}/>);
-    expect(html).toContain('If your AI tool says one of these sources says something, open it and check.');
+    expect(html).toContain('Check the facts');
+    expect(html).toContain('AI tools get details wrong. Check facts with the group, and note what they trust.');
   });
 
-  it('is listed with what was provided in the record', () => {
+  it('says in the record that no sources came with it', () => {
     const state = project();
     state.versions.push({ ...newVersion(), title: 'Use first list' });
     const html = recordHTML(state, {});
-    expect(html).toContain(`<li>A week of donations, carried in the AI brief. <span class="rd-muted">${material.note}</span></li>`);
+    expect(html).toContain('None provided with this problem.');
     expect(html).toContain('Harbourside Food Rescue');
   });
 });

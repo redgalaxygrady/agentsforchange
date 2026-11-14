@@ -23,7 +23,7 @@ The organisation and its people come first, the AI second. Each organisation is 
 
 ## Operating Context
 
-- The landing page is a board of organisations and the problems they'd like help with ("problems to solve", never "jobs"). One organisation, Harbourside Food Rescue, is built out with its own material (a week of donations) and a fact-check kit. The others carry a lighter brief. Anyone can bring their own organisation and challenge.
+- The landing page is a board of organisations and the problems they'd like help with ("problems to solve", never "jobs"). One organisation, Harbourside Food Rescue, is built out with its own brief. The others carry a lighter brief. No brief hands over material or a fact-check kit: problems, material and trusted sources come from talking with the group. Anyone can bring their own organisation and challenge.
 - After choosing, the future builder moves through Brief, Make & try, and Your record. The AI brief opens in ChatGPT or Claude, or is pasted into any tool.
 - Work is saved in the browser. The downloaded record is the backup, so future builders download it at the end of each session.
 
@@ -41,7 +41,7 @@ The organisation and its people come first, the AI second. Each organisation is 
 
 ## Evidence on Hand
 
-- Harbourside Food Rescue: Raewyn's headshot (`public/people/harbourside-food-rescue.jpg`, AI-generated), her words, a week of donations, and official food-safety sources.
+- Harbourside Food Rescue: Raewyn's headshot (`public/people/harbourside-food-rescue.jpg`, AI-generated) and her words.
 - Five other made-up organisations with contacts, quotes and challenges in `src/orgs.ts`. They have no headshots yet, so they show initials.
 - There are no real testimonials, partners, metrics or results. Do not invent them.
 

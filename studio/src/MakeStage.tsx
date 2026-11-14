@@ -178,8 +178,8 @@ function BriefCard({ state, onMove, onOpen }: MakeProps) {
       <button className="ac-btn ac-btn--quiet ac-btn--full" onClick={onOpen}><FileText size={16}/> Get your brief again</button>
     </section>
     <section className="ac-side-card">
-      <h2 className="ac-side-label">Fact-check kit</h2>
-      <p className="ac-side-note">{brief.sources.length ? 'If your AI tool says one of these sources says something, open it and check. Tools get this wrong.' : 'This problem has no sources yet. Check facts with the group, and note what they trust.'}</p>
+      <h2 className="ac-side-label">Check the facts</h2>
+      <p className="ac-side-note">{brief.sources.length ? 'If your AI tool says one of these sources says something, open it and check. Tools get this wrong.' : 'AI tools get details wrong. Check facts with the group, and note what they trust.'}</p>
       {brief.sources.length > 0 && <ul className="ac-side-sources">{brief.sources.map((source) => <li key={source.id}><a href={source.url} target="_blank" rel="noreferrer">{source.title}<ExternalLink size={13}/></a></li>)}</ul>}
       <button className="ac-link" onClick={() => onMove('start', 'lp-source-notes')}>Your fact notes <ArrowRight size={14}/></button>
     </section>
