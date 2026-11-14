@@ -20,12 +20,12 @@ export const PRACTICE_BRIEF: Brief = {
   ],
   factCheckIntro: 'AI tools get details wrong. Check general facts here, and local details with the partner.',
   factQuestionsPlaceholder: 'Which bait works best? Who do I tell what I caught?',
-  promptIntro: 'I am doing “Get a backyard trap working”, a practice brief made up to test Agents for Change: help someone set their first backyard trap and keep checking it. No real group asked for this.',
+  promptIntro: 'I am doing “Get a backyard trap working”, a practice brief made up to test Agents of Change: help someone set their first backyard trap and keep checking it. No real group asked for this.',
   promptRules: [
     'Do not invent trap models, prices, local group contacts or council rules.',
     'Do not give advice on poisons. Point to official guidance instead.',
     'Distinguish general information from local arrangements that I must check with the partner.',
   ],
   recordLabel: 'backyard trapping practice brief',
-  affiliation: 'A practice brief made up to test Agents for Change. No real group asked for this.',
+  affiliation: 'A practice brief made up to test Agents of Change. No real group asked for this.',
 };

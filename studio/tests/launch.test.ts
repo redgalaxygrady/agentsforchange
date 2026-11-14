@@ -236,14 +236,14 @@ describe('downloadable record page', () => {
     expect(html).not.toMatch(/<script/i);
   });
 
-  it('tags only the newest version as the latest and carries the Agents for Change mark without loading anything', () => {
+  it('tags only the newest version as the latest and carries the Agents of Change mark without loading anything', () => {
     const state = initialLaunch();
     state.versions.push(version({ title: 'First' }), version({ title: 'Second' }), version({ title: 'Third' }));
     const html = recordHTML(state, {});
     expect(html.match(/rd-badge--latest/g)?.length).toBe(2);
     expect(html).toContain('<span class="rd-badge rd-badge--latest">V3</span>');
     expect(html).toContain('<span class="rd-badge">V1</span>');
-    expect(html).toContain('Recorded in Agents for Change');
+    expect(html).toContain('Recorded in Agents of Change');
     expect(html).toMatch(/<svg[^>]*viewBox="0 0 64 64"/);
     expect(html).not.toMatch(/(src|href)="https?:\/\/[^"]*(fonts|\.svg|\.png)/);
   });

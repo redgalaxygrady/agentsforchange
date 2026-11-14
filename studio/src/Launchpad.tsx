@@ -9,6 +9,8 @@ import {
   type LaunchState, type LaunchStep, type MomentKind, type TextField, type VersionField,
 } from './launchModel';
 import { BoardStage } from './BoardStage';
+import { ExampleRecord } from './ExampleRecord';
+import { EXAMPLE_HASH } from './exampleProject';
 import { briefFor, chosenChallenge, orgFor } from './orgs';
 import { StartStage } from './StartStage';
 import { MakeStage } from './MakeStage';
@@ -37,6 +39,8 @@ export default function Launchpad() {
   const [stageError, setStageError] = useState(loadedStage.warning || '');
   // Without an organisation there is nothing to brief, make or record yet, so the board comes first.
   const [step, setStep] = useState<LaunchStep>(loaded.state.projectId ? loadedStage.step : 'board');
+  // The example record has its own link, so it can open straight from a slide or a message.
+  const [example, setExample] = useState(() => globalThis.location?.hash === EXAMPLE_HASH);
   const [prompt, setPrompt] = useState(false);
   const [copied, setCopied] = useState(false);
   const [copyFailed, setCopyFailed] = useState(false);
@@ -78,6 +82,19 @@ export default function Launchpad() {
   }, [prompt]);
 
   useEffect(() => {
+    const sync = () => setExample(window.location.hash === EXAMPLE_HASH);
+    window.addEventListener('hashchange', sync);
+    return () => window.removeEventListener('hashchange', sync);
+  }, []);
+
+  useEffect(() => {
+    if (!example) return;
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    const timer = window.setTimeout(() => title.current?.focus({ preventScroll: true }), 40);
+    return () => window.clearTimeout(timer);
+  }, [example]);
+
+  useEffect(() => {
     if (!notice) return;
     const timer = window.setTimeout(() => setNotice(''), 5000);
     return () => window.clearTimeout(timer);
@@ -108,6 +125,8 @@ export default function Launchpad() {
   const onMoment = (kind: MomentKind, value: string) => commit((current) => ({ ...current, moments: { ...current.moments, [kind]: value } }));
 
   function move(next: LaunchStep, focusId?: string) {
+    if (window.location.hash === EXAMPLE_HASH) window.history.pushState(null, '', window.location.pathname + window.location.search);
+    setExample(false);
     setStep(next);
     const result = saveLaunchStage(next);
     setStageError(result.ok ? '' : result.message || 'Your current stage could not be remembered.');
@@ -160,7 +179,7 @@ export default function Launchpad() {
     let stored = true;
     try { await putImage(id, blob); }
     catch { stored = false; }
-    setImageNotes((current) => ({ ...current, [id]: stored ? undefined : 'Shown in this tab only. This browser would not let Agents for Change keep the image, so download your record before closing.' }));
+    setImageNotes((current) => ({ ...current, [id]: stored ? undefined : 'Shown in this tab only. This browser would not let Agents of Change keep the image, so download your record before closing.' }));
     commit((current) => ({ ...current, versions: current.versions.map((version) => version.id === id ? { ...version, hasImage: stored } : version) }));
   }
 
@@ -255,7 +274,7 @@ export default function Launchpad() {
     <a className="ac-skip" href="#ac-main">Skip to content</a>
     <header className="ac-header">
       <div className="ac-header-inner">
-        <button className="ac-brand" onClick={() => move('board')} aria-label="Agents for Change, see the problems to solve"><Wordmark/></button>
+        <button className="ac-brand" onClick={() => move('board')} aria-label="Agents of Change, see the problems to solve"><Wordmark/></button>
         {org && <span className="ac-project">{org.name}</span>}
         {org && <nav className="ac-steps" aria-label="Project stages">
           {stages.map((item, index) => <button key={item.id} aria-current={step === item.id ? 'step' : undefined} onClick={() => move(item.id)}>
@@ -267,7 +286,7 @@ export default function Launchpad() {
       </div>
     </header>
 
-    <main className={`ac-main${step === 'board' ? ' ac-main--board' : ''}`} id="ac-main">
+    <main className={`ac-main${step === 'board' && !example ? ' ac-main--board' : ''}`} id="ac-main">
       {attention && <div className="ac-alert" role="alert">
         <div><strong>{saveError ? 'Your latest changes are not saved.' : preserveSavedCopy ? 'Your earlier saved copy is being kept safe.' : 'Project storage needs attention.'}</strong>
           <p>{saveError || warning || 'Your current changes are only in this tab.'}{preserveSavedCopy && ' New edits stay in this tab until you choose “Save this version”.'}</p>
@@ -276,10 +295,11 @@ export default function Launchpad() {
       </div>}
       {stageError && <p className="ac-stage-note" role="status">{stageError}</p>}
 
-      {step === 'board' && <BoardStage state={state} titleRef={title} busy={hasWork(state)} onChoose={choose} onContinue={() => move(state.versions.length ? 'try' : 'start')} onDownload={() => { void download(); }}/>}
-      {step === 'start' && <StartStage {...stageProps}/>}
-      {step === 'try' && <MakeStage {...stageProps} images={images} imageNotes={imageNotes} onVersionField={onVersionField} onAddVersion={addVersion} onRemoveVersion={removeVersion} onImage={addImage} onRemoveImage={removeImage}/>}
-      {step === 'keep' && <RecordStage {...stageProps} images={images} onDownload={download} onMoment={onMoment}/>}
+      {example && <ExampleRecord titleRef={title} onBack={() => move('board')}/>}
+      {!example && step === 'board' && <BoardStage state={state} titleRef={title} busy={hasWork(state)} onChoose={choose} onContinue={() => move(state.versions.length ? 'try' : 'start')} onDownload={() => { void download(); }}/>}
+      {!example && step === 'start' && <StartStage {...stageProps}/>}
+      {!example && step === 'try' && <MakeStage {...stageProps} images={images} imageNotes={imageNotes} onVersionField={onVersionField} onAddVersion={addVersion} onRemoveVersion={removeVersion} onImage={addImage} onRemoveImage={removeImage}/>}
+      {!example && step === 'keep' && <RecordStage {...stageProps} images={images} onDownload={download} onMoment={onMoment}/>}
     </main>
 
     <dialog ref={dialog} className="ac-dialog" onCancel={(event) => { event.preventDefault(); closeDialog(); }} onClose={() => { returnFocus.current?.focus(); returnFocus.current = null; }} onClick={(event) => { if (event.target === event.currentTarget) closeDialog(); }} aria-labelledby="ac-dialog-title">

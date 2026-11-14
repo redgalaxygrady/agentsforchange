@@ -147,7 +147,7 @@ export function StartStage({ state, titleRef, onField, onMove, onOpen }: StagePr
       </div>
       <div className="ac-launch-actions">
         <button className="ac-btn ac-btn--go ac-btn--big" onClick={onOpen}><FileText size={18}/> Get your brief</button>
-        <button className="ac-link ac-link--light" onClick={() => onMove('try')}>{hasVersions ? 'Back to your work' : 'Already made something? Add it'} <ArrowRight size={16}/></button>
+        <button className="ac-link ac-link--ink" onClick={() => onMove('try')}>{hasVersions ? 'Back to your work' : 'Already made something? Add it'} <ArrowRight size={16}/></button>
       </div>
     </section>
 

@@ -13,7 +13,7 @@ web
 
 ## Product Purpose
 
-Agents for Change helps young people learn to work with AI by solving real problems for local organisations. A future builder picks an organisation and one of its current challenges, makes something with an AI tool, tries it with real people, improves it, and leaves with a portfolio record of what they decided, what AI did, and what changed.
+Agents of Change helps young people learn to work with AI by solving real problems for local organisations. A future builder picks an organisation and one of its current challenges, makes something with an AI tool, tries it with real people, improves it, and leaves with a portfolio record of what they decided, what AI did, and what changed.
 
 Success is a future builder who makes a real call about how AI helps, checks what AI tells them, and can show their working to someone else.
 
@@ -35,7 +35,7 @@ The organisation and its people come first, the AI second. Each organisation is 
 
 ## Brand Commitments
 
-- The name is **Agents for Change**. The brand must not resemble any earlier product it was adapted from.
+- The name is **Agents of Change**. The brand must not resemble any earlier product it was adapted from.
 - Raewyn, the Harbourside coordinator, is shown with a headshot and her own words. There is no video of her.
 - Contacts have real-looking headshots where available, with an invented organisation logo shown alongside.
 
