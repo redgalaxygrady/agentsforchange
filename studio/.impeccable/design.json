@@ -1,37 +1,146 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-14T11:40:00Z",
+  "generatedAt": "2026-11-14T19:00:00Z",
   "title": "Design System: Agents for Change",
   "extensions": {
     "colorMeta": {
-      "potters-teal": { "role": "primary", "displayName": "Potter's-slip Teal", "canonical": "#1f5f5b", "tonalRamp": ["#0b2523", "#123b38", "#164845", "#1f5f5b", "#2b746f", "#5c9894", "#a9cbc7", "#e2efed"] },
-      "marigold": { "role": "primary", "displayName": "Marigold Clay", "canonical": "#f3b443", "tonalRamp": ["#4a3008", "#7a4a0a", "#b9741b", "#e09a2c", "#f3b443", "#f6be55", "#fbe0a6", "#fdf0d3"] },
-      "coral": { "role": "secondary", "displayName": "Coral", "canonical": "#ef7a5a", "tonalRamp": ["#4d1d10", "#7f3320", "#c95e41", "#ef7a5a", "#f6a088", "#f9c1b1", "#fbe0d5", "#fdf1ec"] },
-      "plum": { "role": "tertiary", "displayName": "Plum", "canonical": "#7b3f63", "tonalRamp": ["#2a1121", "#4a2140", "#5c2c4a", "#7b3f63", "#9b6385", "#c39db3", "#efdfe8", "#f8f0f4"] },
-      "paper": { "role": "neutral", "displayName": "Table Paper", "canonical": "#eef1ec", "tonalRamp": ["#17302e", "#34504c", "#556b67", "#9fb1aa", "#bccac2", "#dfe6e0", "#eef1ec", "#fffdf9"] }
+      "ink": {
+        "role": "primary",
+        "displayName": "Ink",
+        "canonical": "#1d2b3a",
+        "tonalRamp": [
+          "#0b1118",
+          "#121c26",
+          "#1d2b3a",
+          "#2c3d50",
+          "#3e4a57",
+          "#5a6470",
+          "#9aa1a9",
+          "#e3e5e8"
+        ]
+      },
+      "highlighter": {
+        "role": "primary",
+        "displayName": "Highlighter",
+        "canonical": "#e4f26a",
+        "tonalRamp": [
+          "#4a5210",
+          "#7d8a1c",
+          "#b3c43a",
+          "#d3e451",
+          "#e4f26a",
+          "#ecf690",
+          "#f3f8c9",
+          "#fafce8"
+        ]
+      },
+      "pencil": {
+        "role": "secondary",
+        "displayName": "Red pencil",
+        "canonical": "#b23c17",
+        "tonalRamp": [
+          "#3d1407",
+          "#621f0c",
+          "#8a2c11",
+          "#b23c17",
+          "#c4471f",
+          "#da7a5a",
+          "#f0c3b2",
+          "#fbebe4"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Notebook paper",
+        "canonical": "#f6f1e6",
+        "tonalRamp": [
+          "#1d2b3a",
+          "#5a6470",
+          "#cfc7b6",
+          "#e2dccd",
+          "#efe9dc",
+          "#f6f1e6",
+          "#fffdf8",
+          "#ffffff"
+        ]
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "The landing headline only." },
-      "headline": { "displayName": "Headline", "purpose": "Page titles and the board heading." },
-      "title": { "displayName": "Title", "purpose": "Group names, block headings, version titles." },
-      "body": { "displayName": "Body", "purpose": "All reading text and fields." },
-      "label": { "displayName": "Label", "purpose": "Buttons, filters, metadata, step names." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "The landing headline only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page titles and the board heading."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Group names, block headings, version titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All reading text and fields."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons, filters, metadata, step names."
+      },
+      "quote": {
+        "displayName": "Quote",
+        "purpose": "A contact speaking in their own words (Fraunces italic)."
+      },
+      "pencil": {
+        "displayName": "Pencil note",
+        "purpose": "Short handwritten notes in Caveat, red pencil."
+      }
     },
     "shadows": [
-      { "name": "table-lift", "value": "0 1px 2px #0c2b291a, 0 14px 30px -16px #0c2b2966", "purpose": "Cards, blocks and dialogs resting on the table." },
-      { "name": "pressed-clay", "value": "inset 0 2px 1px #ffffff8c, inset 0 -5px 9px #7a4a0a33, 0 2px 2px #0c2b2926, 0 9px 16px -8px #0c2b2980", "purpose": "Marigold buttons at rest." },
-      { "name": "pushed-in", "value": "inset 0 4px 9px #7a4a0a4d, inset 0 -1px 1px #ffffff59, 0 1px 1px #0c2b2926", "purpose": "Any pressed control while held." },
-      { "name": "paper-sheet", "value": "8px 10px 0 -2px var(--tint)", "purpose": "The group-coloured sheet beneath board cards." }
+      {
+        "name": "panel",
+        "value": "0 1px 2px #1d2b3a14, 0 12px 26px -20px #1d2b3a80",
+        "purpose": "Working panels laid on the notebook page."
+      },
+      {
+        "name": "press",
+        "value": "0 1px 1px #1d2b3a1f, 0 8px 16px -10px #1d2b3a99",
+        "purpose": "The main ink button at rest."
+      },
+      {
+        "name": "pressed",
+        "value": "inset 0 2px 4px #0000004d",
+        "purpose": "Any button while held."
+      }
     ],
     "motion": [
-      { "name": "ease-settle", "value": "cubic-bezier(.16, 1, .3, 1)", "purpose": "Cards straightening, town pieces lifting." },
-      { "name": "press", "value": "transform .14s, box-shadow .14s", "purpose": "Buttons, rows and chips sinking when pressed." }
+      {
+        "name": "ease-settle",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Drawings lifting on hover, panels settling."
+      },
+      {
+        "name": "quick",
+        "value": ".15s",
+        "purpose": "Hover fills and border changes."
+      }
     ],
     "breakpoints": [
-      { "name": "wide", "value": "1100px" },
-      { "name": "tablet", "value": "820px" },
-      { "name": "phone", "value": "520px" },
-      { "name": "small", "value": "360px" }
+      {
+        "name": "wide",
+        "value": "1100px"
+      },
+      {
+        "name": "tablet",
+        "value": "820px"
+      },
+      {
+        "name": "phone",
+        "value": "520px"
+      },
+      {
+        "name": "small",
+        "value": "360px"
+      }
     ]
   },
   "components": [
@@ -39,89 +148,108 @@
       "name": "Go Button",
       "kind": "button",
       "refersTo": "button-go",
-      "description": "The one action that matters most on a view.",
-      "html": "<button class=\"ds-btn-go\">Work with Harbourside <svg width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button>",
-      "css": ".ds-btn-go { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 22px; border: 0; border-radius: 16px; background: #f3b443; color: #17302e; font: 700 16px 'Atkinson Hyperlegible', system-ui, sans-serif; box-shadow: inset 0 2px 1px #ffffff8c, inset 0 -5px 9px #7a4a0a33, 0 2px 2px #0c2b2926, 0 9px 16px -8px #0c2b2980; transition: transform .14s, box-shadow .14s, background .15s; cursor: pointer; } .ds-btn-go:hover { background: #f6be55; transform: translateY(-1px); } .ds-btn-go:active { transform: translateY(2px); box-shadow: inset 0 4px 9px #7a4a0a4d, inset 0 -1px 1px #ffffff59, 0 1px 1px #0c2b2926; } .ds-btn-go:focus-visible { outline: 3px solid #1f5f5b; outline-offset: 3px; }"
+      "description": "The one filled ink button on a view.",
+      "html": "<button class=\"ds-btn ds-btn-go\">See the problems to solve</button>",
+      "css": ".ds-btn{display:inline-flex;min-height:48px;align-items:center;padding:0 22px;border:0;border-radius:999px;font:700 16px/1.2 \"Atkinson Hyperlegible\",system-ui,sans-serif}.ds-btn-go{background:#1d2b3a;color:#f6f1e6;box-shadow:0 1px 1px #1d2b3a1f,0 8px 16px -10px #1d2b3a99}"
     },
     {
       "name": "Quiet Button",
       "kind": "button",
       "refersTo": "button-quiet",
-      "description": "Secondary actions beside or below the go button.",
-      "html": "<button class=\"ds-btn-quiet\">Download my record</button>",
-      "css": ".ds-btn-quiet { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 22px; border: 0; border-radius: 16px; background: #fffdf9; color: #17302e; font: 700 16px 'Atkinson Hyperlegible', system-ui, sans-serif; box-shadow: inset 0 2px 1px #fff, inset 0 -4px 8px #0c2b291f, 0 0 0 1.5px #c9d4cd, 0 8px 14px -9px #0c2b2966; transition: transform .14s, box-shadow .14s; cursor: pointer; } .ds-btn-quiet:hover { background: #fff; transform: translateY(-1px); } .ds-btn-quiet:active { transform: translateY(2px); box-shadow: inset 0 3px 8px #0c2b2926, 0 0 0 1.5px #c9d4cd; } .ds-btn-quiet:focus-visible { outline: 3px solid #1f5f5b; outline-offset: 3px; }"
+      "description": "Every other action: an outline pill.",
+      "html": "<button class=\"ds-btn ds-btn-quiet\">Get your brief again</button>",
+      "css": ".ds-btn{display:inline-flex;min-height:48px;align-items:center;padding:0 22px;border:0;border-radius:999px;font:700 16px/1.2 \"Atkinson Hyperlegible\",system-ui,sans-serif}.ds-btn-quiet{background:transparent;color:#1d2b3a;box-shadow:inset 0 0 0 1.6px #1d2b3a}"
     },
     {
       "name": "Problem Row",
-      "kind": "custom",
+      "kind": "list-item",
       "refersTo": "problem-row",
-      "description": "One problem in the group's own words; the clickable unit of the board.",
-      "html": "<button class=\"ds-problem\"><span>Finding drivers for the early-morning pickups.</span><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button>",
-      "css": ".ds-problem { display: flex; width: 100%; max-width: 340px; align-items: center; gap: 12px; padding: 13px 14px 13px 16px; border: 0; border-radius: 16px; background: #f2f4ef; color: #17302e; font: 15px/1.4 'Atkinson Hyperlegible', system-ui, sans-serif; text-align: left; box-shadow: inset 0 1px 1px #fff, inset 0 -3px 6px #0c2b2914; transition: transform .14s, box-shadow .14s, background .15s; cursor: pointer; } .ds-problem span { flex: 1; } .ds-problem svg { color: #556b67; } .ds-problem:hover { background: #fdf0d3; transform: translateY(-1px); } .ds-problem:active { transform: translateY(1px); box-shadow: inset 0 3px 7px #7a4a0a40; } .ds-problem:focus-visible { outline: 3px solid #1f5f5b; outline-offset: 2px; }"
+      "description": "One problem in the group's own words on a ruled line, with a drawn dot; ready ones get a highlighter dot and a pencil note.",
+      "html": "<button class=\"ds-prob\"><span class=\"ds-dot\"></span><span>Donations arrive in a rush and nobody knows what's in the crates<b>ready to go</b></span></button>",
+      "css": ".ds-prob{display:grid;grid-template-columns:20px 1fr;gap:12px;width:340px;padding:12px 2px;border:0;border-bottom:1px solid #1d2b3a1f;background:none;text-align:left;font:16px/1.45 \"Atkinson Hyperlegible\",sans-serif;color:#1d2b3a}.ds-dot{width:18px;height:18px;border:1.7px solid #1d2b3a;border-radius:50% 46% 52% 48%;background:#e4f26a}.ds-prob b{display:block;color:#b23c17;font:700 20px/1.2 Caveat,cursive}"
     },
     {
-      "name": "Filter Pill",
+      "name": "Filter",
       "kind": "chip",
       "refersTo": "filter-on",
-      "description": "Board filters; the selected one sits pressed in, teal.",
-      "html": "<div class=\"ds-filters\"><button class=\"ds-filter\" aria-pressed=\"true\">Everything</button><button class=\"ds-filter\" aria-pressed=\"false\">Volunteering</button></div>",
-      "css": ".ds-filters { display: flex; gap: 8px; } .ds-filter { min-height: 42px; padding: 0 18px; border: 0; border-radius: 999px; background: #fffdf9; color: #17302e; font: 700 15px 'Atkinson Hyperlegible', system-ui, sans-serif; box-shadow: inset 0 2px 1px #fff, inset 0 -3px 6px #0c2b291a, 0 0 0 1.5px #ccd6cf; cursor: pointer; } .ds-filter:hover { transform: translateY(-1px); } .ds-filter[aria-pressed='true'] { background: #1f5f5b; color: #fff; box-shadow: inset 0 3px 7px #0006, 0 0 0 1.5px #1f5f5b; transform: none; } .ds-filter:focus-visible { outline: 3px solid #1f5f5b; outline-offset: 3px; }"
+      "description": "Board filters; the selected one is filled ink.",
+      "html": "<button class=\"ds-f ds-on\">All</button> <button class=\"ds-f\">Food</button>",
+      "css": ".ds-f{min-height:42px;padding:0 18px;border:0;border-radius:999px;background:transparent;box-shadow:inset 0 0 0 1.4px #1d2b3a5c;font:700 15px \"Atkinson Hyperlegible\",sans-serif;color:#1d2b3a}.ds-on{background:#1d2b3a;color:#f6f1e6;box-shadow:none}"
     },
     {
-      "name": "Text Field",
+      "name": "Input",
       "kind": "input",
       "refersTo": "input",
-      "description": "Every typed answer on the Brief and in versions.",
-      "html": "<input class=\"ds-input\" placeholder=\"Someone you could actually show it to\">",
-      "css": ".ds-input { width: 100%; max-width: 420px; min-height: 50px; padding: 12px 16px; border: 2px solid #bccac2; border-radius: 14px; background: #fff; color: #17302e; font: 16px/1.5 'Atkinson Hyperlegible', system-ui, sans-serif; box-shadow: inset 0 2px 4px #0c2b290f; transition: border-color .15s, box-shadow .15s; } .ds-input:hover { border-color: #93a69e; } .ds-input:focus { outline: none; border-color: #1f5f5b; box-shadow: 0 0 0 4px #1f5f5b2e; }"
+      "description": "White field on paper; focus is an ink border with a highlighter ring.",
+      "html": "<input class=\"ds-in\" placeholder=\"Who is it for?\">",
+      "css": ".ds-in{min-height:50px;padding:12px 16px;border:1.6px solid #1d2b3a5c;border-radius:8px;background:#fffefb;font:16px \"Atkinson Hyperlegible\",sans-serif;color:#1d2b3a}.ds-in:focus{outline:none;border-color:#1d2b3a;box-shadow:0 0 0 4px #e4f26a}"
     },
     {
-      "name": "Group Card",
+      "name": "Panel",
       "kind": "card",
-      "refersTo": "card",
-      "description": "A group on the board, on a sheet of its own colour, a little off square.",
-      "html": "<article class=\"ds-card\"><div class=\"ds-card-stage\"></div><h3>Northgate Community Food Bank</h3><p>Food bank · Volunteering</p></article>",
-      "css": ".ds-card { --tint: #fbe0d5; max-width: 340px; display: flex; flex-direction: column; gap: 12px; padding: 26px 24px 24px; border-radius: 28px 26px 30px 24px; background: #fffdf9; color: #17302e; box-shadow: 8px 10px 0 -2px var(--tint), 0 1px 2px #0c2b291a, 0 14px 30px -16px #0c2b2966; transform: rotate(-.5deg); transition: transform .25s cubic-bezier(.16, 1, .3, 1), box-shadow .25s; font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; } .ds-card:hover { transform: rotate(0) translateY(-3px); box-shadow: 10px 13px 0 -2px var(--tint), 0 22px 40px -18px #0c2b2973; } .ds-card-stage { height: 110px; border-radius: 22px 18px 24px 20px; background: var(--tint); } .ds-card h3 { margin: 0; font: 400 24px/1.1 'Caprasimo', 'Cooper Black', Georgia, serif; } .ds-card p { margin: 0; color: #556b67; font-size: 14px; }"
+      "refersTo": "panel",
+      "description": "A working panel laid on the notebook page.",
+      "html": "<div class=\"ds-panel\"><h3>Your brief</h3><p>Who it's for, what you're making, and what AI does.</p></div>",
+      "css": ".ds-panel{max-width:340px;padding:22px;border-radius:10px;background:#fffdf8;box-shadow:inset 0 0 0 1px #1d2b3a1f,0 1px 2px #1d2b3a14,0 12px 26px -20px #1d2b3a80;color:#1d2b3a;font:15px/1.55 \"Atkinson Hyperlegible\",sans-serif}.ds-panel h3{margin:0 0 6px;font:600 24px Fraunces,Georgia,serif}.ds-panel p{margin:0}"
     },
     {
-      "name": "Stage Nav",
-      "kind": "nav",
-      "description": "The three project stages in the header, each with a numbered clay disc.",
-      "html": "<nav class=\"ds-steps\"><button aria-current=\"step\"><b>1</b>Brief</button><button><b>2</b>Make &amp; try</button><button><b>3</b>Your record</button></nav>",
-      "css": ".ds-steps { display: flex; gap: 4px; font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; } .ds-steps button { display: inline-flex; min-height: 44px; align-items: center; gap: 8px; padding: 0 16px 0 7px; border: 0; border-radius: 999px; background: transparent; color: #34504c; font-size: 15px; font-weight: 700; cursor: pointer; } .ds-steps button:hover { background: #f2f4ef; } .ds-steps b { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 50%; background: #e6ebe4; box-shadow: inset 0 1px 1px #fff, inset 0 -2px 3px #0c2b291f; font-size: 14px; } .ds-steps button[aria-current='step'] { background: #f3b443; color: #17302e; box-shadow: inset 0 2px 1px #ffffff8c, inset 0 -5px 9px #7a4a0a33; } .ds-steps button[aria-current='step'] b { background: #17302e; color: #fdf8ee; }"
+      "name": "Stage Steps",
+      "kind": "navigation",
+      "refersTo": "button-go",
+      "description": "The three project stages in the header, each with a drawn number disc; the current one is a highlighter pill.",
+      "html": "<nav class=\"ds-steps\"><span class=\"ds-s ds-cur\"><b>1</b>Brief</span><span class=\"ds-s\"><b>2</b>Make &amp; try</span></nav>",
+      "css": ".ds-steps{display:flex;gap:6px}.ds-s{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px 0 7px;border-radius:999px;font:700 15px \"Atkinson Hyperlegible\",sans-serif;color:#3e4a57}.ds-s b{display:inline-grid;place-items:center;width:30px;height:30px;border:1.6px solid #1d2b3a;border-radius:52% 48% 50% 46%;font-size:14px}.ds-cur{background:#e4f26a;color:#1d2b3a}.ds-cur b{background:#1d2b3a;color:#f6f1e6}"
     }
   ],
   "narrative": {
-    "northStar": "Shaped by hand",
-    "overview": "Everything a future builder sees should look like someone made it at a kitchen table: pictures modelled in clay, controls pressed out of clay, reading laid on cut paper. The landing stands on a deep potter's-slip teal with a small clay town on an island in the harbour; every group on the board has its own piece of that town, and there is an empty plot for a group you bring. The working pages (Brief, Make & try, Your record) are pale paper, so the reading is calm, but the clay still turns up in the step discs, the photo frames and the empty state.\n\nThe point of the look is the product's point: this is people making useful things for people near them, not software issuing tasks. Warmth comes from material and colour, never from exclamation, sparkle or \"magic\" AI imagery. Density is generous: one decision per block, one problem per row.",
+    "northStar": "A field notebook",
+    "overview": "Everything a future builder sees should feel like a notebook someone carries to a community group: ink drawings, notes in red pencil, a highlighter for what's been chosen, all on dotted paper. The person working is present on the page, and the record at the end reads like the notebook's last pages, written up.",
     "keyCharacteristics": [
-      "Real SVG lighting for clay (`ac-clay`, `ac-clay-flat`, `ac-clay-sm` in `src/Clay.tsx`), lit from the top left like a model on a table by a window.",
-      "A chunky rolled-clay display face over a highly legible reading face.",
-      "Teal ground for arriving, paper ground for working.",
-      "Marigold is the thing you press.",
-      "Cards sit a little off square on a sheet of their group's colour."
+      "Ink line drawings of people doing things (Open Doodles by Pablo Stanley, CC0), one per group, plus the hero and the empty Make page.",
+      "A warm serif for titles (Fraunces) over a highly legible reading face (Atkinson Hyperlegible), with Caveat only for short notes.",
+      "Ink is the thing you press. Highlighter marks what is chosen or current. Red pencil is the voice of the person working.",
+      "Dotted paper everywhere, with white panels laid on it for working."
     ],
     "rules": [
-      { "name": "The One Marigold Rule", "body": "Each screen has one marigold action that matters most. A second marigold button on the same view means one of them should be quiet.", "section": "colors" },
-      { "name": "The Group Colour Rule", "body": "A group's colour comes from its piece of the town (`TINTS` in `src/Town.tsx`) and is used only as the paper its card sits on and the panel behind its piece. It never colours text or buttons.", "section": "colors" },
-      { "name": "The Small Labels Stay Plain Rule", "body": "Caprasimo is for 19px and up. Anything smaller, including small headings inside the record preview, uses Atkinson Hyperlegible at 700.", "section": "typography" },
-      { "name": "The No Italic Display Rule", "body": "Caprasimo has no italic. Emphasis in headlines is colour (marigold on teal, teal on paper), never a slanted face.", "section": "typography" },
-      { "name": "The Real Clay Rule", "body": "If it is meant to look modelled, draw it in SVG and give it `filter=\"url(#ac-clay)\"` (or `ac-clay-sm` under 64px). Don't fake clay with stacked CSS gradients. Mount `<ClayDefs/>` once per page; the downloaded record has no defs, so anything shared with the record must not depend on the filter.", "section": "elevation" }
+      {
+        "name": "The One Ink Button Rule",
+        "body": "Each screen has one filled ink button that matters most. Others are outline pills.",
+        "section": "colors"
+      },
+      {
+        "name": "The Highlighter Means Chosen Rule",
+        "body": "Highlighter marks what's current, chosen or ready. It never decorates something the person hasn't picked or reached.",
+        "section": "colors"
+      },
+      {
+        "name": "The Short Notes Rule",
+        "body": "Caveat is for notes of a few words. Never a paragraph, a label or a button.",
+        "section": "typography"
+      },
+      {
+        "name": "The Emphasis Is Highlighter Rule",
+        "body": "Headline emphasis is a highlighter stroke behind the words, not italic and not a second colour.",
+        "section": "typography"
+      },
+      {
+        "name": "The Paper Stays Flat Rule",
+        "body": "Group cards on the board have no box or shadow. Only working panels lift.",
+        "section": "elevation"
+      }
     ],
     "dos": [
-      "Do draw anything meant to look modelled as SVG under the clay filter.",
-      "Do keep one marigold action per view.",
-      "Do keep problems in the group's own words, one per row.",
-      "Do show the honest label that the groups are made up, on the board and in the footer.",
-      "Do check every new screen at 390px and 320px with long text in the fields."
+      "Do keep one filled ink button per view.",
+      "Do use highlighter only for what is chosen, current or ready.",
+      "Do keep pencil notes to a few words.",
+      "Do keep the dot grid on the page ground.",
+      "Do give every new group a drawing in ink and highlighter."
     ],
     "donts": [
-      "Don't use sparkles, asterisks, glowing gradients or any \"magic\" AI imagery.",
-      "Don't use exclamation marks or em dashes in copy.",
-      "Don't set Caprasimo below 19px or in italic.",
-      "Don't put a small label above a heading. Let the heading say it.",
-      "Don't colour text or buttons with a group's tint.",
-      "Don't call the problems \"jobs\"."
+      "Don't use red pencil for buttons, links or anything you press.",
+      "Don't set paragraphs in Caveat or use it below 20px.",
+      "Don't put a box or shadow round board entries.",
+      "Don't add a second accent colour. Groups are told apart by their drawings, not tints.",
+      "Don't use sparkles, asterisks, glowing gradients or any \"magic\" AI imagery."
     ]
   }
 }

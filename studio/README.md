@@ -22,11 +22,11 @@ npm run build      # type checks, then builds static files into dist/
 - `src/BoardStage.tsx`: the landing board of groups and their problems. `src/StartStage.tsx`, `src/MakeStage.tsx`, `src/RecordStage.tsx`: Brief, Make & try and Your record.
 - `src/launchModel.ts`: project state, saving and loading, and the AI brief.
 - `src/RecordDocument.tsx`, `src/recordExport.tsx`: the record, both in the app and as the downloaded page.
-- `src/Brand.tsx`, `src/brand.css`: the thumbprint mark and wordmark. `src/Clay.tsx` is the SVG lighting filter that makes drawings look like modelling clay, and `src/Town.tsx` is the clay town on the landing page, one piece per group. `src/Logos.tsx` holds the groups' invented logos and `src/Contact.tsx` their people. `src/base.css` and `src/launch.css` hold the rest of the styles. The look is written up in `DESIGN.md`.
+- `src/Brand.tsx`, `src/brand.css`: the thumbprint mark and wordmark. `src/Sketch.tsx` shows the drawings: one per group from `public/doodles/`, and the landing drawing with its pencil notes. `src/Logos.tsx` holds the groups' invented logos and `src/Contact.tsx` their people. `src/base.css` and `src/launch.css` hold the rest of the styles. The look is written up in `DESIGN.md`.
 
 ## Changing the groups
 
-For a real sprint, replace the groups in `src/orgs.ts` with real local ones, and the built-out brief in `src/brief.ts` with the material one of them provides. A contact's headshot goes in `public/people/{group-id}.jpg`; without one, the card shows their initials. Each group also has an invented logo in `src/Logos.tsx` and a clay piece in `src/Town.tsx`, both keyed by its id. `tests/briefSwap.test.tsx` runs every screen with a practice group and brief, to prove nothing from the live brief is built into the workspace.
+For a real sprint, replace the groups in `src/orgs.ts` with real local ones, and the built-out brief in `src/brief.ts` with the material one of them provides. A contact's headshot goes in `public/people/{group-id}.jpg`; without one, the card shows their initials. Each group also has an invented logo in `src/Logos.tsx` and a drawing at `public/doodles/{group-id}.svg`, both keyed by its id. A group without a drawing gets the bring-your-own one. `tests/briefSwap.test.tsx` runs every screen with a practice group and brief, to prove nothing from the live brief is built into the workspace.
 
 Every group on the board now is a practice example: Harbourside Food Rescue, Raewyn, the week of donations and the other five groups are made up, and the page says so.
 
@@ -38,3 +38,7 @@ Every group on the board now is a practice example: Harbourside Food Rescue, Rae
 ## Hosting
 
 Vercel builds the `studio/` folder using `vercel.json`: `npm ci`, then `npm test && npm run build`, serving `dist/`.
+
+## Credits
+
+The drawings are [Open Doodles](https://www.opendoodles.com) by Pablo Stanley, released under CC0 (free to use, no attribution needed, credited here anyway). They were rendered to SVG from the `react-open-doodles` package with the workspace's ink and highlighter colours; the package isn't a dependency of the app.

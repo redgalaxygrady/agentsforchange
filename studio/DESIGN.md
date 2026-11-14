@@ -1,248 +1,231 @@
 ---
 name: Agents for Change
-description: A small town modelled in clay, where young people pick a real problem and show how they worked with AI to help.
+description: A field notebook where young people pick a real problem from a local group and show, page by page, how they worked with AI to help.
 colors:
-  potters-teal: "#1f5f5b"
-  potters-teal-deep: "#164845"
-  marigold: "#f3b443"
-  marigold-deep: "#b9741b"
-  marigold-soft: "#fdf0d3"
-  coral: "#ef7a5a"
-  plum: "#7b3f63"
-  sky: "#8fc3e8"
+  ink: "#1d2b3a"
+  ink-2: "#3e4a57"
+  muted: "#5a6470"
+  highlighter: "#e4f26a"
+  highlighter-soft: "#f3f8c9"
+  pencil: "#b23c17"
   leaf: "#2f7a45"
-  meadow: "#7fb56c"
-  paper: "#eef1ec"
-  card-paper: "#fffdf9"
-  slip: "#f2f4ef"
-  cream: "#fdf8ee"
-  ink: "#17302e"
-  ink-soft: "#34504c"
-  muted: "#556b67"
-  line: "#dfe6e0"
-  line-strong: "#bccac2"
+  paper: "#f6f1e6"
+  card: "#fffdf8"
+  shade: "#efe9dc"
+  line: "#1d2b3a1f"
+  line-strong: "#1d2b3a5c"
 typography:
   display:
-    fontFamily: "Caprasimo, Cooper Black, Georgia, serif"
-    fontSize: "clamp(42px, 4.9vw, 70px)"
-    fontWeight: 400
-    lineHeight: 1.03
-    letterSpacing: "-0.01em"
+    fontFamily: "Fraunces, Georgia, serif"
+    fontSize: "clamp(44px, 5.4vw, 80px)"
+    fontWeight: 600
+    lineHeight: 1.02
+    letterSpacing: "-0.025em"
   headline:
-    fontFamily: "Caprasimo, Cooper Black, Georgia, serif"
+    fontFamily: "Fraunces, Georgia, serif"
     fontSize: "clamp(36px, 4.2vw, 56px)"
-    fontWeight: 400
-    lineHeight: 1.04
+    fontWeight: 600
+    lineHeight: 1.05
   title:
-    fontFamily: "Caprasimo, Cooper Black, Georgia, serif"
+    fontFamily: "Fraunces, Georgia, serif"
     fontSize: "24px"
-    fontWeight: 400
+    fontWeight: 600
     lineHeight: 1.15
+  quote:
+    fontFamily: "Fraunces, Georgia, serif"
+    fontSize: "19px"
+    fontWeight: 400
+    fontStyle: "italic"
+    lineHeight: 1.4
   body:
     fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
     fontSize: "16px"
     fontWeight: 400
-    lineHeight: 1.6
+    lineHeight: 1.55
   label:
     fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
     fontSize: "14px"
     fontWeight: 700
     lineHeight: 1.35
+  pencil:
+    fontFamily: "Caveat, cursive"
+    fontSize: "22px"
+    fontWeight: 700
+    lineHeight: 1.1
 rounded:
-  input: "14px"
-  button: "16px"
-  button-big: "20px"
-  panel: "22px"
-  card: "28px"
-  band: "32px"
+  input: "8px"
+  panel: "10px"
+  dialog: "12px"
   pill: "999px"
 spacing:
   gutter-phone: "16px"
   gutter: "32px"
-  card-gap: "28px"
   block: "30px"
 components:
   button-go:
-    backgroundColor: "{colors.marigold}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.button}"
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.paper}"
+    rounded: "{rounded.pill}"
     padding: "0 22px"
     height: "48px"
   button-go-big:
-    backgroundColor: "{colors.marigold}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.button-big}"
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.paper}"
+    rounded: "{rounded.pill}"
     padding: "0 28px"
-    height: "58px"
+    height: "56px"
   button-quiet:
-    backgroundColor: "{colors.card-paper}"
+    backgroundColor: "transparent"
     textColor: "{colors.ink}"
-    rounded: "{rounded.button}"
+    rounded: "{rounded.pill}"
     padding: "0 22px"
     height: "48px"
   problem-row:
-    backgroundColor: "{colors.slip}"
+    backgroundColor: "transparent"
     textColor: "{colors.ink}"
-    rounded: "16px"
-    padding: "13px 14px 13px 16px"
+    padding: "12px 2px"
   problem-row-hover:
-    backgroundColor: "{colors.marigold-soft}"
-  chip:
-    backgroundColor: "{colors.slip}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.pill}"
-    padding: "7px 15px"
+    backgroundColor: "{colors.highlighter-soft}"
   filter-on:
-    backgroundColor: "{colors.potters-teal}"
-    textColor: "{colors.card-paper}"
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.paper}"
     rounded: "{rounded.pill}"
     height: "42px"
   input:
-    backgroundColor: "#ffffff"
+    backgroundColor: "#fffefb"
     textColor: "{colors.ink}"
     rounded: "{rounded.input}"
     padding: "12px 16px"
-  card:
-    backgroundColor: "{colors.card-paper}"
+  panel:
+    backgroundColor: "{colors.card}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.card}"
-    padding: "26px 24px 24px"
+    rounded: "{rounded.panel}"
   launch-band:
-    backgroundColor: "{colors.potters-teal}"
-    textColor: "{colors.cream}"
-    rounded: "{rounded.band}"
-    padding: "40px 44px"
+    backgroundColor: "{colors.highlighter}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.panel}"
 ---
 
 # Design System: Agents for Change
 
 ## Overview
 
-**Creative North Star: "Shaped by hand"**
+**Creative North Star: "A field notebook"**
 
-Everything a future builder sees should look like someone made it at a kitchen table: pictures modelled in clay, controls pressed out of clay, reading laid on cut paper. The landing stands on a deep potter's-slip teal with a small clay town on an island in the harbour; every group on the board has its own piece of that town, and there is an empty plot for a group you bring. The working pages (Brief, Make & try, Your record) are pale paper, so the reading is calm, but the clay still turns up in the step discs, the photo frames and the empty state.
+Everything a future builder sees should feel like a notebook someone carries to a community group: ink drawings, notes in red pencil, a highlighter for what's been chosen, all on dotted paper. The person working is present on the page. Their notes sit beside the drawings, and the record at the end reads like the notebook's last pages, written up.
 
-The point of the look is the product's point: this is people making useful things for people near them, not software issuing tasks. Warmth comes from material and colour, never from exclamation, sparkle or "magic" AI imagery. Density is generous: one decision per block, one problem per row.
+Key characteristics:
 
-**Key Characteristics:**
-- Real SVG lighting for clay (`ac-clay`, `ac-clay-flat`, `ac-clay-sm` in `src/Clay.tsx`), lit from the top left like a model on a table by a window.
-- A chunky rolled-clay display face over a highly legible reading face.
-- Teal ground for arriving, paper ground for working.
-- Marigold is the thing you press.
-- Cards sit a little off square on a sheet of their group's colour.
+- Ink line drawings of people doing things (Open Doodles by Pablo Stanley, CC0), one per group, plus one for the hero and one for the empty Make page.
+- A warm serif for titles over a highly legible reading face, with a handwritten face only for short notes.
+- Ink is the thing you press. Highlighter marks what's chosen or current. Red pencil is the voice of the person working.
+- Dotted paper everywhere, with white panels laid on it for working.
 
 ## Colors
 
-A saturated, hand-mixed palette: one deep teal ground, one marigold for action, and a small family of clay colours that name the groups.
+A small palette: ink and paper, one highlighter, one red pencil.
 
 ### Primary
-- **Potter's-slip Teal** (potters-teal): the landing ground, the launch band on the Brief, the selected filter, the "You're working with them" pill and focus rings. Always carries cream text.
-- **Marigold Clay** (marigold): the one thing to press on any screen (the main button, the current step, the "Ready to go" pill, ticks on chosen rows). Its darker partner (marigold-deep) draws the thumbprint in the mark.
+- **Ink** (ink): text, line drawings, the main button, the selected filter, focus rings, the record's masthead.
+- **Highlighter** (highlighter): the current step, the "ready to go" dot, the highlighted words in a headline, the chosen signup row, the launch panel on the Brief, the latest version badge in the record. Always with ink text.
 
 ### Secondary
-- **Coral** (coral): the clay ring round a contact's photo, and warm accents in the town.
-- **Plum, Sky, Meadow** (plum, sky, meadow): town and illustration colours only. They tint the groups' cards through soft paper tints (see Components).
+- **Red pencil** (pencil): handwritten notes only (the hero's notes, "ready to go", "Next", dialog tags). Darkened to pass contrast on paper. Never a button or a link.
+- **Leaf** (leaf): the "Saved" status only.
 
 ### Neutral
-- **Table Paper** (paper): the page ground for working pages, always with the fine grain.
-- **Card Paper** (card-paper): cards, blocks, dialogs, the header.
-- **Slip** (slip): problem rows, chips and quiet pills: unfired clay.
-- **Cream** (cream): text on teal.
-- **Ink, Soft Ink, Muted** (ink, ink-soft, muted): body text, secondary text, metadata.
-- **Line, Strong Line** (line, line-strong): dividers and input strokes.
+- **Paper** (paper): the page ground, always with the dot grid (`--ac-dots`, 1px dots every 26px).
+- **Card** (card): panels laid on the paper: blocks, contact, versions, side cards.
+- **Shade** (shade): hover on quiet things, the record's footer, empty thumbnails.
+- **Ink-2, Muted** (ink-2, muted): secondary text and labels.
+- **Line, Line-strong** (line, line-strong): ruled lines between problems, input borders.
 
 ### Named Rules
-**The One Marigold Rule.** Each screen has one marigold action that matters most. A second marigold button on the same view means one of them should be quiet.
+**The One Ink Button Rule.** Each screen has one filled ink button that matters most. Others are outline pills.
 
-**The Group Colour Rule.** A group's colour comes from its piece of the town (`TINTS` in `src/Town.tsx`) and is used only as the paper its card sits on and the panel behind its piece. It never colours text or buttons.
+**The Highlighter Means Chosen Rule.** Highlighter marks what's current, chosen or ready. It never decorates something the person hasn't picked or reached.
 
 ## Typography
 
-**Display Font:** Caprasimo (with Cooper Black, Georgia)
-**Body Font:** Atkinson Hyperlegible (with system-ui)
+**Display Font:** Fraunces 600 (with Georgia)
+**Quote Font:** Fraunces 400 italic
+**Body Font:** Atkinson Hyperlegible
+**Note Font:** Caveat 700
 
-**Character:** Caprasimo reads like a word rolled out of clay: soft, heavy and friendly. Atkinson Hyperlegible was designed for low-vision readers and keeps every form field and paragraph plain to read.
+**Character:** Fraunces is a warm, slightly old-style serif that reads like a printed field guide. Atkinson Hyperlegible was designed for low-vision readers and keeps every form field and paragraph plain to read. Caveat is a pencil note in the margin.
 
 ### Hierarchy
-- **Display** (400, clamp(42px, 4.9vw, 70px), 1.03): the landing headline only, cream on teal, with the last words in marigold.
-- **Headline** (400, clamp(36px, 4.2vw, 56px), 1.04): page titles on Brief, Make & try and Your record, and "Problems to solve".
-- **Title** (400, 22px to 26px): group names on cards, block headings, version titles, the contact's name.
-- **Body** (400, 16px to 19px, 1.6): all reading text, capped near 38em per line, with pretty wrapping.
-- **Label** (700, 13px to 15px): buttons, filters, metadata, step names.
+- **Display** (600, clamp(44px, 5.4vw, 80px), 1.02): the landing headline, with the last words highlighted.
+- **Headline** (600, clamp(36px, 4.2vw, 56px)): stage titles.
+- **Title** (600, 24px to 27px): card and block titles.
+- **Quote** (400 italic, 19px): a contact speaking in their own words.
+- **Body** (400, 16px, 1.55): everything a person reads or types.
+- **Label** (700, 14px to 15px): field labels, button text, dt.
+- **Pencil** (Caveat 700, 20px to 30px): handwritten notes.
 
 ### Named Rules
-**The Small Labels Stay Plain Rule.** Caprasimo is for 19px and up. Anything smaller, including small headings inside the record preview, uses Atkinson Hyperlegible at 700.
+**The Short Notes Rule.** Caveat is for notes of a few words. Never a paragraph, a label or a button.
 
-**The No Italic Display Rule.** Caprasimo has no italic. Emphasis in headlines is colour (marigold on teal, teal on paper), never a slanted face.
+**The Emphasis Is Highlighter Rule.** Headline emphasis is a highlighter stroke behind the words, not italic and not a second colour.
 
 ## Layout
 
-Content sits in a 1240px column with 32px gutters (16px on phones). The landing is a two-column hero (copy and town) that stacks below 1100px; below 820px the headline comes first, then the town, then the lede and button, so clay shows on the first phone screen. Raewyn's band overlaps the hero by 36px. The board is an auto-filling grid of cards at least 340px wide with 28px gaps; the bring-your-own card always spans the full row at the end. Working pages use stacked blocks with 20px between them, and Make & try adds a sticky side column above 1100px. Breakpoints: 1100, 820, 520 and 360px.
+Content sits in a 1240px column with 32px gutters (16px on phones). The landing is a two-column hero (copy and the annotated drawing) that stacks below 1100px; below 820px the order is headline, drawing, lede, buttons. Group cards are notebook entries with no box: drawing, name, what they do, the contact's quote, then a ruled list of problems. The bring-your-own card spans the full width with a dashed rule under it.
 
 ## Elevation & Depth
 
-Depth is physical, not digital. Clay pictures get their depth from SVG lighting and a soft cast shadow inside the filter. Buttons and rows are pressed clay: a light inset on top, a darker inset underneath, and a short drop. On press they sink (the shadow turns inward and the element moves down 1px to 2px). Cards and blocks lift gently off the table with one shared soft shadow, and board cards add a solid offset sheet of their group's colour beneath them, like layered cut paper.
+Mostly flat, like paper. Panels lift a little off the page so the working area reads as a sheet laid on the notebook.
 
 ### Shadow Vocabulary
-- **Table lift** (`0 1px 2px #0c2b291a, 0 14px 30px -16px #0c2b2966`): cards, blocks, dialogs.
-- **Pressed clay** (`inset 0 2px 1px #ffffff8c, inset 0 -5px 9px #7a4a0a33, 0 2px 2px #0c2b2926, 0 9px 16px -8px #0c2b2980`): marigold buttons at rest.
-- **Pushed in** (`inset 0 4px 9px #7a4a0a4d, inset 0 -1px 1px #ffffff59, 0 1px 1px #0c2b2926`): any pressed control while held.
-- **Paper sheet** (`8px 10px 0 -2px <group tint>`): beneath board cards only.
+- **Panel** (`0 1px 2px #1d2b3a14, 0 12px 26px -20px #1d2b3a80`): blocks, versions, side cards.
+- **Press** (`0 1px 1px #1d2b3a1f, 0 8px 16px -10px #1d2b3a99`): the main button at rest.
+- **Pressed** (`inset 0 2px 4px #0000004d`): any button while held.
 
 ### Named Rules
-**The Real Clay Rule.** If it is meant to look modelled, draw it in SVG and give it `filter="url(#ac-clay)"` (or `ac-clay-sm` under 64px). Don't fake clay with stacked CSS gradients. Mount `<ClayDefs/>` once per page; the downloaded record has no defs, so anything shared with the record must not depend on the filter.
+**The Paper Stays Flat Rule.** Group cards on the board have no box or shadow. Only working panels lift.
 
 ## Shapes
 
-Everything is soft and slightly uneven. Inputs are 14px, buttons 16px (20px when big), panels 22px, cards 28px with corners that differ by a few pixels so they look cut by hand, bands 32px, and filters and chips are full pills. Board cards sit off square by up to half a degree and straighten when pointed at; they sit square on phones. No hard corners and no thin outline-only boxes, except the dashed edge that marks something not made yet (the bring-your-own card, the empty plot, the empty version).
+Pills for buttons, chips and filters. 8px for inputs, 10px for panels, 12px for dialogs. Step discs and problem dots are slightly uneven circles (`border-radius: 52% 48% 50% 46%`) so they look drawn.
 
 ## Components
 
 ### Buttons
-- **Shape:** soft pressed slab (16px, 20px when big), at least 48px tall.
-- **Go:** marigold with ink text and the pressed-clay shadow. Grain shows through.
-- **Quiet:** card paper with a 1.5px pale stroke drawn as a shadow ring.
-- **Hover / Active:** lifts 1px on hover; sinks 2px with an inward shadow while pressed. Focus shows a teal ring.
+- **Go:** ink pill with paper text and the press shadow.
+- **Quiet:** transparent pill with a 1.6px ink ring; hover fills with soft highlighter.
+- **Hover / Active:** lifts 2px on hover; sinks 1px with an inset shadow while pressed. Focus shows a 3px ink outline.
 
 ### Problem rows
-The clickable unit of the board: one problem in the group's own words, a slip-coloured row with an arrow (or a "Ready to go" marigold pill). Hover warms it to soft marigold; pressing leaves a thumb-dent that fades.
+The clickable unit of the board: one problem in the group's own words, on a ruled line with a drawn dot and an arrow. A ready problem has a highlighter dot and "ready to go" in red pencil. Hover sweeps a highlighter stroke across the row.
 
 ### Chips and filters
-Slip pills with a pale ring. A selected filter turns teal with cream text and sits pressed in.
+Outline pills. A selected filter is filled ink with paper text.
 
 ### Cards
-- **Corner Style:** 28px with slightly uneven corners.
-- **Background:** card paper with grain over a sheet of the group's tint.
-- **Inside:** the group's piece of the town on a tinted panel, the logo and name, what they do, the contact in their own words, then "Problems they'd like help with" as rows.
-- **Padding:** 26px 24px 24px (22px 18px 20px on phones).
+- **Board entries:** no box. The group's drawing, then name and logo, what they do, the contact's quote in Fraunces italic, and "Problems they'd like help with" in red pencil above the ruled list.
+- **Working panels:** card colour, 10px radius, a 1px line ring and the panel shadow.
 
 ### Inputs / Fields
-- **Style:** white, 2px strong-line stroke, 14px radius, a faint inset.
-- **Focus:** teal stroke with a 4px soft teal ring.
-- **Long answers:** short answers that can run long (who the work is for) use a textarea that grows with its content.
+White on paper, a 1.6px line-strong border, 8px radius. Focus: ink border and a 4px highlighter ring. Labels are bold body text above the field.
 
 ### Navigation
-A sticky paper header with the wordmark, the group's name, and three stage buttons, each with a numbered clay disc. The current stage is a marigold pill with an ink disc. On phones the stages take a full row and shorten their labels. The save status only appears once there is a project.
+A sticky paper header with a 1.5px ink rule under it: the wordmark, the group's name, and three stage buttons with drawn number discs. The current stage is a highlighter pill with an ink disc. On phones the stages take the second row.
 
-### Clay ring and clay disc
-`ClayRing` presses a thick coral clay ring round a contact's photo (Raewyn on the board and on the Brief). `ClayDisc` is a small clay coin with a number or tick pressed into it, used for step numbers.
-
-### The town
-`Town` in `src/Town.tsx` is the landing picture. Each group's piece is a link to its card and lifts when that card is pointed at; `Piece` shows the same piece on the card. New groups need a piece, a crop and a tint.
+### Drawings
+`Doodle` in `src/Sketch.tsx` shows a group's drawing from `public/doodles/<group id>.svg` (falls back to `own.svg`). `HeroSketch` is the landing drawing with four red-pencil notes and arrows. The drawings are Open Doodles (CC0) pre-rendered with ink #1d2b3a and highlighter #e4f26a. A new group needs a new drawing: render another Open Doodle with the same two colours, or draw one in the same line style.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** draw anything meant to look modelled as SVG under the clay filter.
-- **Do** keep one marigold action per view.
-- **Do** keep problems in the group's own words, one per row.
-- **Do** show the honest label that the groups are made up, on the board and in the footer.
-- **Do** check every new screen at 390px and 320px with long text in the fields.
+- **Do** keep one filled ink button per view.
+- **Do** use highlighter only for what's chosen, current or ready.
+- **Do** keep pencil notes to a few words.
+- **Do** keep the dot grid on the page ground.
+- **Do** give every new group a drawing in ink and highlighter.
 
 ### Don't:
-- **Don't** use sparkles, asterisks, glowing gradients or any "magic" AI imagery.
-- **Don't** use exclamation marks or em dashes in copy.
-- **Don't** set Caprasimo below 19px or in italic.
-- **Don't** put a small label above a heading. Let the heading say it.
-- **Don't** colour text or buttons with a group's tint.
-- **Don't** call the problems "jobs".
+- **Don't** use red pencil for buttons, links or anything you press.
+- **Don't** set paragraphs in Caveat or use it below 20px.
+- **Don't** put a box or shadow round board entries.
+- **Don't** add a second accent colour. Groups are told apart by their drawings, not tints.
+- **Don't** add sparkles, glows or gradients that suggest AI is doing something special.
