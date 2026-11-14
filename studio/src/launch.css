@@ -190,12 +190,9 @@
 .ac-problem:hover { background: linear-gradient(transparent 8%, #e4f26a99 8%, #e4f26a99 92%, transparent 92%); }
 .ac-problem:active .ac-problem-dot { background: var(--ac-ink); }
 .ac-problem-dot { width: 18px; height: 18px; margin-top: 2px; border: 1.7px solid var(--ac-ink); border-radius: 50% 46% 52% 48%; }
-.ac-card.is-ready .ac-problem:first-child .ac-problem-dot, .ac-problems li:has(.ac-problem-ready) .ac-problem-dot { background: var(--ac-mark); }
 .ac-problem-text { min-width: 0; }
 .ac-problem-go { flex: none; margin-top: 2px; color: var(--ac-muted); transition: transform .2s, color .2s; }
 .ac-problem:hover .ac-problem-go { color: var(--ac-ink); transform: translateX(3px); }
-.ac-problem-ready { display: block; color: var(--ac-pencil); font: 700 20px/1.2 'Caveat', cursive; }
-.ac-carries { color: var(--ac-ink-2); font-size: 14px; line-height: 1.45; }
 .ac-card-go { align-self: flex-start; margin-top: 6px; }
 .ac-cards > .ac-card--own { grid-column: 1 / -1; display: grid; grid-template-columns: 170px auto minmax(0, 1fr) auto; align-items: center; gap: 12px 32px; padding: 24px 0; border-bottom: 1.5px dashed var(--ac-line-2); }
 .ac-card--own .ac-card-about { max-width: 34em; }
@@ -245,7 +242,6 @@
 .ac-tick svg { animation: ac-tick .3s cubic-bezier(.2, .8, .2, 1); }
 @keyframes ac-tick { from { opacity: 0; transform: scale(.4); } to { opacity: 1; transform: none; } }
 .ac-signup-text { padding-top: 3px; font-size: 17px; line-height: 1.4; }
-.ac-signup-text small { display: block; margin-top: 2px; color: var(--ac-pencil); font: 700 20px/1.2 'Caveat', cursive; }
 .ac-signup-row.is-on { background: linear-gradient(transparent 6%, #e4f26a8c 6%, #e4f26a8c 94%, transparent 94%); }
 .ac-signup-row.is-on .ac-signup-text { font-weight: 700; }
 .ac-signup-row--other .ac-signup-text { color: var(--ac-ink-2); }

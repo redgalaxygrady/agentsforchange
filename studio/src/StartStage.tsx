@@ -65,7 +65,7 @@ function JobPicker({ org, state, onField }: { org: OrgView } & Pick<StageProps, 
       return <label key={challenge} className={`ac-signup-row${on ? ' is-on' : ''}`}>
         <input type="radio" name="lp-challenge" checked={on} onChange={() => { setOther(false); onField('challenge', challenge); }}/>
         <span className="ac-tick" aria-hidden="true">{on && <Check size={20} strokeWidth={3.2}/>}</span>
-        <span className="ac-signup-text">{challenge}{org.ready?.challenge === challenge && <small>{org.ready.label}</small>}</span>
+        <span className="ac-signup-text">{challenge}</span>
       </label>;
     })}
     <label className={`ac-signup-row ac-signup-row--other${otherOn ? ' is-on' : ''}`}>
@@ -100,7 +100,7 @@ export function StartStage({ state, titleRef, onField, onMove, onOpen }: StagePr
     <OrgHero org={org} state={state} titleRef={titleRef} onField={onField} onMove={onMove}/>
 
     <section className="ac-block" aria-labelledby="ac-job-title">
-      <div className="ac-block-head"><span className="ac-step">1</span><div><h2 id="ac-job-title">{org.own ? 'What problem could you help them with?' : 'Pick one problem'}</h2><p>{org.own ? 'One thing is plenty. You can sharpen it after you’ve talked to them.' : `Each is in ${org.contact?.name.split(' ')[0] ?? 'their'}’s words. Pick the one you’d most like to help with.`}</p></div></div>
+      <div className="ac-block-head"><span className="ac-step">1</span><div><h2 id="ac-job-title">{org.own ? 'What problem could you help them with?' : 'Pick one problem'}</h2><p>{org.own ? 'One thing is plenty. You can sharpen it after you’ve talked to them.' : `Each is in ${org.contact?.name.split(' ')[0] ?? 'their'}’s words. Talk them through together, then pick the one you’d most like to help with.`}</p></div></div>
       <JobPicker key={org.id} org={org} state={state} onField={onField}/>
       {challenge && brief.task && <div className="ac-job-brief" aria-live="polite">
         <p>{brief.task}</p>

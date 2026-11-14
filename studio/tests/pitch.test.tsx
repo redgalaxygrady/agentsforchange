@@ -87,3 +87,15 @@ describe('the name', () => {
     expect(LAUNCH_STAGE_STORAGE_KEY).toBe('agents-for-change.stage.v1');
   });
 });
+
+describe('picking a problem', () => {
+  it('leaves the material and fact-check kit out, because problems are talked through with the group first', () => {
+    const start = renderToStaticMarkup(<StartStage state={returning} titleRef={{ current: null }} onField={noop} onMove={noop} onOpen={noop}/>);
+    for (const html of [board(), board(returning), start]) {
+      expect(html).not.toContain('Comes with a week of their donations');
+      expect(html).not.toMatch(/ready to go/i);
+    }
+    expect(start).toContain('Talk them through together, then pick the one you’d most like to help with.');
+    expect(board()).toContain('Start with a conversation');
+  });
+});
