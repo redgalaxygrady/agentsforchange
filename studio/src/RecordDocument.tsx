@@ -100,7 +100,7 @@ export function RecordDocument({ state, images, example = false }: { state: Laun
   const brief = briefFor(state);
   const org = orgFor(state);
   return <article className="rd">
-    <div className="rd-mast"><span>{example ? 'Example portfolio record (made up)' : 'Portfolio record'}</span><span>Agents of Change</span></div>
+    <div className="rd-mast"><span>{example ? 'Example portfolio record (made up)' : 'Portfolio record'}</span><span>Agents For Change</span></div>
     <div className="rd-band"/>
     {cover && <div className="rd-cover"><img src={cover} alt="The latest version of the work"/><span>{versionLabel(latestIndex!.index)}</span></div>}
     <header className="rd-head">
@@ -149,7 +149,7 @@ export function RecordDocument({ state, images, example = false }: { state: Laun
         {brief.material && <li>{brief.material.title}, carried in the AI brief. <span className="rd-muted">{brief.material.note}</span></li>}
       </ul> : <p className="rd-none">None provided with this problem.</p>}
     </section>
-    <footer className="rd-foot">{example && <p className="rd-example">A made-up example to show what a finished record looks like. The maker, the group, the people and everything above are invented.</p>}<p>This record is the maker’s own account. The work lives in the maker’s own tools; Agents of Change did not open, check or grade it. {brief.affiliation} Copying an AI prompt does not mean AI was used, and listing a source does not mean it was reviewed.</p><p className="rd-made"><Mark size={22}/>Recorded in Agents of Change</p></footer>
+    <footer className="rd-foot">{example && <p className="rd-example">A made-up example to show what a finished record looks like. The maker, the group, the people and everything above are invented.</p>}<p>This record is the maker’s own account. The work lives in the maker’s own tools; Agents For Change did not open, check or grade it. {brief.affiliation} Copying an AI prompt does not mean AI was used, and listing a source does not mean it was reviewed.</p><p className="rd-made"><Mark size={22}/>Recorded in Agents For Change</p></footer>
   </article>;
 }
 
