@@ -30,8 +30,11 @@ export interface Org {
   /** Current challenges, in their words. The future builder picks one. */
   challenges: string[];
   audienceIdeas: [string, string, string];
-  /** A challenge that comes built out, with the organisation's own material and a fact-check kit. */
-  ready?: { challenge: string; brief: Brief; label: string };
+  /**
+   * A challenge that comes built out, with the organisation's own material and a fact-check kit for the Brief.
+   * The board and the problem picker don't advertise it: problems are talked through with the group first.
+   */
+  ready?: { challenge: string; brief: Brief };
 }
 
 /** What the Brief and the board show about the organisation behind a project, whether from the board or brought by the future builder. */
@@ -72,7 +75,7 @@ export const ORGS: Org[] = [
     },
     challenges: [FOOD_RESCUE_READY, 'Finding drivers for the early-morning pickups.', 'Telling donors what happened to the food they gave.'],
     audienceIdeas: FOOD_RESCUE_BRIEF.audienceIdeas,
-    ready: { challenge: FOOD_RESCUE_READY, brief: FOOD_RESCUE_BRIEF, label: 'Comes with a week of their donations and a fact-check kit' },
+    ready: { challenge: FOOD_RESCUE_READY, brief: FOOD_RESCUE_BRIEF },
   },
   {
     id: 'northgate-food-bank', short: 'Northgate', name: 'Northgate Community Food Bank', kind: 'Food bank', area: 'Volunteering',

@@ -31,7 +31,7 @@ function Replace({ name, current, onYes, onNo, onDownload }: { name: string; cur
 }
 
 function Card({ org, current, pending, onPick, replace }: { org: Org; current: boolean; pending: boolean; onPick: (challenge?: string) => void; replace: ReactNode }) {
-  return <article className={`ac-card${org.ready ? ' is-ready' : ''}${current ? ' is-current' : ''}`} id={`ac-org-${org.id}`} aria-labelledby={`ac-org-${org.id}-name`}>
+  return <article className={`ac-card${current ? ' is-current' : ''}`} id={`ac-org-${org.id}`} aria-labelledby={`ac-org-${org.id}-name`}>
     <div className="ac-card-stage"><Doodle id={org.id}/></div>
     <header className="ac-card-head">
       <OrgLogo id={org.id} size={52}/>
@@ -54,12 +54,11 @@ function Card({ org, current, pending, onPick, replace }: { org: Org; current: b
       {org.challenges.map((challenge) => <li key={challenge}>
         <button className="ac-problem" onClick={() => onPick(challenge)} aria-label={`Work with ${org.short} on: ${challenge}`}>
           <span className="ac-problem-dot" aria-hidden="true"/>
-          <span className="ac-problem-text">{challenge}{org.ready?.challenge === challenge && <span className="ac-problem-ready">ready to go</span>}</span>
+          <span className="ac-problem-text">{challenge}</span>
           <ArrowRight className="ac-problem-go" size={18} aria-hidden="true"/>
         </button>
       </li>)}
     </ul>
-    {org.ready && <p className="ac-carries">Ready to go. {org.ready.label}.</p>}
     {pending ? replace : <button className="ac-btn ac-btn--quiet ac-card-go" onClick={() => onPick()}>{current ? `Carry on with ${org.short}` : `Work with ${org.short}`} <ArrowRight size={17}/></button>}
   </article>;
 }
@@ -119,7 +118,7 @@ export function BoardStage({ state, titleRef, busy, onChoose, onContinue, onDown
       <div className="ac-meet-copy">
         <blockquote><h2 id="ac-meet-title">“{featured.contact.quote}”</h2></blockquote>
         <p className="ac-meet-who"><strong>{featured.contact.name}</strong>, {featured.contact.role.toLowerCase()} at {featured.name}</p>
-        <p className="ac-meet-note">{featured.ready?.label}, so you can start straight away.</p>
+        <p className="ac-meet-note">Start with a conversation: hear what’s going on, then decide together what to work on.</p>
         {pending?.id === featured.id && pending.from === 'tag' ? replace(featured.name) : <button className="ac-btn ac-btn--go" onClick={() => pick(featured.id, undefined, 'tag')}>Work with {featured.short} <ArrowRight size={17}/></button>}
       </div>
     </section>}
