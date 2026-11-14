@@ -49,6 +49,9 @@ export interface OrgView {
 
 export const OWN_ID = 'own';
 
+/** A form where a community group can share a problem, such as a Google Form. Leave it empty and the board shows no button. */
+export const PARTNER_SIGNUP_URL: string = '';
+
 const FOOD_RESCUE_READY = 'Kitchens only find out what’s arrived when it turns up, and some of it won’t keep.';
 
 export const ORGS: Org[] = [

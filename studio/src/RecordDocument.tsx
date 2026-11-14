@@ -49,6 +49,7 @@ export const RECORD_CSS = `
 .rd-sources a{color:var(--rd-ink);text-decoration-thickness:1.5px;text-underline-offset:3px}
 .rd-sources .rd-muted{color:var(--rd-muted)}
 .rd-foot{padding:20px 40px 28px;border-top:1.5px solid var(--rd-line);background:var(--rd-shade);color:var(--rd-muted);font-size:12.5px;line-height:1.55}
+.rd-example{margin-bottom:10px!important;color:var(--rd-ink);font-weight:700}
 .rd-made{display:flex;align-items:center;gap:8px;margin-top:12px!important;color:var(--rd-ink);font-weight:700}
 @media (max-width:640px){.rd-mast,.rd-head,.rd-section{padding-left:20px;padding-right:20px}.rd-foot{padding:18px 20px 24px}.rd-head h1{font-size:30px}.rd-dl,.rd-version dl{grid-template-columns:minmax(0,1fr);gap:2px 0}.rd-dl dd,.rd-version dd{margin-bottom:10px}.rd-version{grid-template-columns:minmax(0,1fr);padding:14px}.rd-cover{aspect-ratio:16/10}}
 @media print{.rd{border-radius:0}.rd-version,.rd-moment{break-inside:avoid}.rd-cover{max-height:300px}.rd-mast,.rd-band,.rd-badge,.rd-quote,.rd-foot{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
@@ -91,14 +92,15 @@ export function BriefTitle({ brief }: { brief: Brief }) {
   return <>{title.slice(0, -titleEmphasis.length)}<em>{titleEmphasis}</em></>;
 }
 
-export function RecordDocument({ state, images }: { state: LaunchState; images: Record<string, string | undefined> }) {
+/** `example` marks a made-up record shown to explain the product, so it can never pass for a real future builder's account. */
+export function RecordDocument({ state, images, example = false }: { state: LaunchState; images: Record<string, string | undefined>; example?: boolean }) {
   const latestIndex = [...state.versions].map((version, index) => ({ version, index })).reverse().find(({ version }) => images[version.id]);
   const cover = latestIndex ? images[latestIndex.version.id] : undefined;
   const latest = state.versions.at(-1);
   const brief = briefFor(state);
   const org = orgFor(state);
   return <article className="rd">
-    <div className="rd-mast"><span>Portfolio record</span><span>Agents for Change</span></div>
+    <div className="rd-mast"><span>{example ? 'Example portfolio record (made up)' : 'Portfolio record'}</span><span>Agents of Change</span></div>
     <div className="rd-band"/>
     {cover && <div className="rd-cover"><img src={cover} alt="The latest version of the work"/><span>{versionLabel(latestIndex!.index)}</span></div>}
     <header className="rd-head">
@@ -147,7 +149,7 @@ export function RecordDocument({ state, images }: { state: LaunchState; images: 
         {brief.material && <li>{brief.material.title}, carried in the AI brief. <span className="rd-muted">{brief.material.note}</span></li>}
       </ul> : <p className="rd-none">None provided with this problem.</p>}
     </section>
-    <footer className="rd-foot"><p>This record is the maker’s own account. The work lives in the maker’s own tools; Agents for Change did not open, check or grade it. {brief.affiliation} Copying an AI prompt does not mean AI was used, and listing a source does not mean it was reviewed.</p><p className="rd-made"><Mark size={22}/>Recorded in Agents for Change</p></footer>
+    <footer className="rd-foot">{example && <p className="rd-example">A made-up example to show what a finished record looks like. The maker, the group, the people and everything above are invented.</p>}<p>This record is the maker’s own account. The work lives in the maker’s own tools; Agents of Change did not open, check or grade it. {brief.affiliation} Copying an AI prompt does not mean AI was used, and listing a source does not mean it was reviewed.</p><p className="rd-made"><Mark size={22}/>Recorded in Agents of Change</p></footer>
   </article>;
 }
 

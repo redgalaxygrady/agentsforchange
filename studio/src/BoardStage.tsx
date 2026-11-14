@@ -3,7 +3,8 @@ import { ArrowDown, ArrowRight, Download, Plus } from 'lucide-react';
 import { Avatar } from './Contact';
 import { OrgLogo } from './Logos';
 import type { LaunchState } from './launchModel';
-import { AREAS, ORGS, OWN_ID, orgFor, type Area, type Org } from './orgs';
+import { EXAMPLE_HASH } from './exampleProject';
+import { AREAS, ORGS, OWN_ID, orgFor, PARTNER_SIGNUP_URL, type Area, type Org } from './orgs';
 import { Doodle, HeroSketch } from './Sketch';
 
 export interface BoardProps {
@@ -85,7 +86,7 @@ export function BoardStage({ state, titleRef, busy, onChoose, onContinue, onDown
           <div className="ac-hero-actions">
             {current
               ? <><button className="ac-btn ac-btn--go ac-btn--big" onClick={onContinue}>Carry on with {current.short} <ArrowRight size={19}/></button>
-                <a className="ac-link ac-link--light" href="#ac-groups">Or see the other problems <ArrowDown size={16}/></a></>
+                <a className="ac-link ac-link--ink" href="#ac-groups">Or see the other problems <ArrowDown size={16}/></a></>
               : <a className="ac-btn ac-btn--go ac-btn--big" href="#ac-groups">See the problems to solve <ArrowDown size={19}/></a>}
           </div>
         </div>
@@ -93,6 +94,22 @@ export function BoardStage({ state, titleRef, busy, onChoose, onContinue, onDown
           <HeroSketch/>
         </figure>
       </div>
+    </section>
+
+    <section className="ac-parents" aria-labelledby="ac-parents-title">
+      <div className="ac-parents-copy">
+        <p className="ac-kicker">For parents and whānau</p>
+        <h2 id="ac-parents-title">Real work with AI, in your community, in four weeks</h2>
+        <p className="ac-parents-lede">Employers want young people who can use AI to solve real problems. School mostly prepares them for exams, and can’t easily give every teen a real project with a local group. That’s what a sprint does.</p>
+        <a className="ac-btn ac-btn--quiet" href={EXAMPLE_HASH}>See a finished record <ArrowRight size={17}/></a>
+        <p className="ac-parents-note">A made-up example of what a future builder leaves with.</p>
+      </div>
+      <ul className="ac-parents-points">
+        <li><strong>For 16 to 18-year-olds who are keen.</strong> It works best when your teen wants to do it.</li>
+        <li><strong>In person, over four weeks.</strong> Future builders work in a room together with a facilitator, the way a modern team does.</li>
+        <li><strong>Matched by hand.</strong> Each future builder is paired with a local group and a problem that fits what they’re into, like sport, design or marketing, with an industry expert from that field.</li>
+        <li><strong>Something to show for it.</strong> A portfolio record of what they made, what AI did and what they decided, shared at a portfolio fair at the end.</li>
+      </ul>
     </section>
 
     {featured && <section className="ac-meet" aria-labelledby="ac-meet-title">
@@ -110,7 +127,7 @@ export function BoardStage({ state, titleRef, busy, onChoose, onContinue, onDown
     <section className="ac-groups" id="ac-groups" aria-labelledby="ac-groups-title">
       <div className="ac-groups-head">
         <h2 id="ac-groups-title">Problems to solve</h2>
-        <p>These groups are made up, so you can practise. In a sprint, they’re real groups near you, and you meet the people behind them. Whichever problem you pick, your brief carries their story, your choices and ground rules for the AI.</p>
+        <p>These groups are made up, so you can practise. In a sprint, your facilitator matches you with a real group near you, based on what you’re into, and you meet the people behind them. Whichever problem you pick, your brief carries their story, your choices and ground rules for the AI.</p>
       </div>
       <div className="ac-filter" role="group" aria-label="Show groups working on">
         <button aria-pressed={area === null} onClick={() => setArea(null)}>Everything</button>
@@ -128,6 +145,12 @@ export function BoardStage({ state, titleRef, busy, onChoose, onContinue, onDown
           {pending?.id === OWN_ID ? replace('your own group') : <button className="ac-btn ac-btn--quiet ac-card-go" onClick={() => pick(OWN_ID)}><Plus size={17}/> {current?.id === OWN_ID ? 'Carry on with your group' : 'Bring your own'}</button>}
         </article>
       </div>
+    </section>
+
+    <section className="ac-partners" aria-labelledby="ac-partners-title">
+      <h2 id="ac-partners-title">Run a community group?</h2>
+      <p>Tell us about a problem you’d love a hand with, in a few sentences and in your own words. We match it with a future builder who’s into that kind of work, and you meet them in person. You get real work done, and they get real experience.</p>
+      {PARTNER_SIGNUP_URL && <a className="ac-btn ac-btn--quiet" href={PARTNER_SIGNUP_URL} target="_blank" rel="noreferrer">Share a problem <ArrowRight size={17}/></a>}
     </section>
   </div>;
 }

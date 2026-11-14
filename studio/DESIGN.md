@@ -1,5 +1,5 @@
 ---
-name: Agents for Change
+name: Agents of Change
 description: A field notebook where young people pick a real problem from a local group and show, page by page, how they worked with AI to help.
 colors:
   ink: "#1d2b3a"
@@ -106,7 +106,7 @@ components:
     rounded: "{rounded.panel}"
 ---
 
-# Design System: Agents for Change
+# Design System: Agents of Change
 
 ## Overview
 

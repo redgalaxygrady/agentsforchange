@@ -339,7 +339,7 @@ export function toolLink(tool: AiTool, text: string): { href: string; prefilled:
 /** The dialog's fine print about sending, true to whether this text fits in any tool's link. */
 export function sendingNote(text: string): string {
   const filled = AI_TOOLS.filter((tool) => toolLink(tool, text).prefilled).map((tool) => tool.name);
-  return `Agents for Change sends nothing itself. ${filled.length
+  return `Agents of Change sends nothing itself. ${filled.length
     ? `Opening ${filled.join(' or ')} puts it in the link so it lands in their box, and you press send when you are ready.`
     : 'It’s too long to fit in a link, so opening a tool copies it for you to paste in, and you press send when you are ready.'}`;
 }
