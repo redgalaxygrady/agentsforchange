@@ -179,7 +179,7 @@ export default function Launchpad() {
     let stored = true;
     try { await putImage(id, blob); }
     catch { stored = false; }
-    setImageNotes((current) => ({ ...current, [id]: stored ? undefined : 'Shown in this tab only. This browser would not let Agents For Change keep the image, so download your record before closing.' }));
+    setImageNotes((current) => ({ ...current, [id]: stored ? undefined : 'Shown in this tab only. This browser would not let Agents for Change keep the image, so download your record before closing.' }));
     commit((current) => ({ ...current, versions: current.versions.map((version) => version.id === id ? { ...version, hasImage: stored } : version) }));
   }
 
@@ -274,7 +274,7 @@ export default function Launchpad() {
     <a className="ac-skip" href="#ac-main">Skip to content</a>
     <header className="ac-header">
       <div className="ac-header-inner">
-        <button className="ac-brand" onClick={() => move('board')} aria-label="Agents For Change, see the problems to solve"><Wordmark/></button>
+        <button className="ac-brand" onClick={() => move('board')} aria-label="Agents for Change, see the problems to solve"><Wordmark/></button>
         {org && <span className="ac-project">{org.name}</span>}
         {org && <nav className="ac-steps" aria-label="Project stages">
           {stages.map((item, index) => <button key={item.id} aria-current={step === item.id ? 'step' : undefined} onClick={() => move(item.id)}>
@@ -305,7 +305,6 @@ export default function Launchpad() {
     <dialog ref={dialog} className="ac-dialog" onCancel={(event) => { event.preventDefault(); closeDialog(); }} onClose={() => { returnFocus.current?.focus(); returnFocus.current = null; }} onClick={(event) => { if (event.target === event.currentTarget) closeDialog(); }} aria-labelledby="ac-dialog-title">
       {prompt && <div className="ac-dialog-inner">
         <div className="ac-dialog-top">
-          <span className="ac-dialog-tag">Your brief</span>
           <button className="ac-icon-btn" aria-label="Close" onClick={closeDialog}><X size={20}/></button>
         </div>
         <h2 id="ac-dialog-title" ref={dialogTitle} tabIndex={-1}>Take this to your AI tool</h2>

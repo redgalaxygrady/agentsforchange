@@ -1,122 +1,132 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-14T19:00:00Z",
-  "title": "Design System: Agents For Change",
+  "generatedAt": "2026-11-15T01:30:00Z",
+  "title": "Design System: Agents for Change",
   "extensions": {
     "colorMeta": {
-      "ink": {
+      "lime": {
         "role": "primary",
-        "displayName": "Ink",
-        "canonical": "#1d2b3a",
+        "displayName": "Lime",
+        "canonical": "#DBFF00",
         "tonalRamp": [
-          "#0b1118",
-          "#121c26",
-          "#1d2b3a",
-          "#2c3d50",
-          "#3e4a57",
-          "#5a6470",
-          "#9aa1a9",
-          "#e3e5e8"
+          "#3F4500",
+          "#6B7700",
+          "#A3BD00",
+          "#C4E600",
+          "#DBFF00",
+          "#E6FF4D",
+          "#F0FF99",
+          "#F8FFD6"
         ]
       },
-      "highlighter": {
-        "role": "primary",
-        "displayName": "Highlighter",
-        "canonical": "#e4f26a",
-        "tonalRamp": [
-          "#4a5210",
-          "#7d8a1c",
-          "#b3c43a",
-          "#d3e451",
-          "#e4f26a",
-          "#ecf690",
-          "#f3f8c9",
-          "#fafce8"
-        ]
-      },
-      "pencil": {
+      "pink": {
         "role": "secondary",
-        "displayName": "Red pencil",
-        "canonical": "#b23c17",
+        "displayName": "Pink",
+        "canonical": "#FFB5B5",
         "tonalRamp": [
-          "#3d1407",
-          "#621f0c",
-          "#8a2c11",
-          "#b23c17",
-          "#c4471f",
-          "#da7a5a",
-          "#f0c3b2",
-          "#fbebe4"
+          "#5C2A2A",
+          "#8F4A4A",
+          "#C77878",
+          "#E89A9A",
+          "#FFB5B5",
+          "#FFC9C9",
+          "#F7D4D4",
+          "#FFF0F0"
         ]
       },
-      "paper": {
+      "charcoal": {
         "role": "neutral",
-        "displayName": "Notebook paper",
-        "canonical": "#f6f1e6",
+        "displayName": "Charcoal",
+        "canonical": "#2B2B2B",
         "tonalRamp": [
-          "#1d2b3a",
-          "#5a6470",
-          "#cfc7b6",
-          "#e2dccd",
-          "#efe9dc",
-          "#f6f1e6",
-          "#fffdf8",
-          "#ffffff"
+          "#151515",
+          "#1C1C1C",
+          "#232222",
+          "#2B2B2B",
+          "#343232",
+          "#3B3838",
+          "#5C5555",
+          "#A69D9D"
+        ]
+      },
+      "chalk": {
+        "role": "neutral",
+        "displayName": "Chalk",
+        "canonical": "#F1E9E9",
+        "tonalRamp": [
+          "#B5ACAC",
+          "#C9C0C0",
+          "#E8DEDE",
+          "#F1E9E9",
+          "#F8F4F4",
+          "#FFFFFF",
+          "#F1E9E952",
+          "#F1E9E91f"
         ]
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "The landing headline only."
+        "purpose": "The landing headline only, Inter Tight 500, last words in lime."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Page titles and the board heading."
+        "purpose": "Stage titles and the board heading."
       },
       "title": {
         "displayName": "Title",
         "purpose": "Group names, block headings, version titles."
       },
+      "quote": {
+        "displayName": "Quote",
+        "purpose": "A contact speaking in their own words, Inter Tight 400 in pink."
+      },
       "body": {
         "displayName": "Body",
-        "purpose": "All reading text and fields."
+        "purpose": "All reading text and fields, Inter."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Buttons, filters, metadata, step names."
+        "purpose": "Buttons, filters, field labels, step names."
       },
-      "quote": {
-        "displayName": "Quote",
-        "purpose": "A contact speaking in their own words (Fraunces italic)."
-      },
-      "pencil": {
-        "displayName": "Pencil note",
-        "purpose": "Short handwritten notes in Caveat, red pencil."
+      "small": {
+        "displayName": "Small",
+        "purpose": "Hints, captions, fine print."
       }
     },
     "shadows": [
       {
         "name": "panel",
-        "value": "0 1px 2px #1d2b3a14, 0 12px 26px -20px #1d2b3a80",
-        "purpose": "Working panels laid on the notebook page."
+        "value": "0 20px 40px -28px #000000cc",
+        "purpose": "Working panels that lift slightly off the charcoal."
       },
       {
-        "name": "press",
-        "value": "0 1px 1px #1d2b3a1f, 0 8px 16px -10px #1d2b3a99",
-        "purpose": "The main ink button at rest."
+        "name": "dialog",
+        "value": "0 30px 80px -10px #000000b3",
+        "purpose": "The brief dialog."
       },
       {
-        "name": "pressed",
-        "value": "inset 0 2px 4px #0000004d",
-        "purpose": "Any button while held."
+        "name": "paper",
+        "value": "drop-shadow(0 20px 32px #00000073)",
+        "purpose": "The light record on the dark page."
       }
     ],
     "motion": [
       {
         "name": "ease-settle",
         "value": "cubic-bezier(.16, 1, .3, 1)",
-        "purpose": "Drawings lifting on hover, panels settling."
+        "purpose": "Tiles turning a quarter, panels settling."
+      },
+      {
+        "name": "turn",
+        "value": ".7s",
+        "purpose": "A tile turning a quarter on hover."
+      },
+      {
+        "name": "turn-in",
+        "value": "1.1s, staggered 55ms",
+        "purpose": "The landing tiles turning into place once on load."
       },
       {
         "name": "quick",
@@ -148,108 +158,113 @@
       "name": "Go Button",
       "kind": "button",
       "refersTo": "button-go",
-      "description": "The one filled ink button on a view.",
+      "description": "The one lime button on a view.",
       "html": "<button class=\"ds-btn ds-btn-go\">See the problems to solve</button>",
-      "css": ".ds-btn{display:inline-flex;min-height:48px;align-items:center;padding:0 22px;border:0;border-radius:999px;font:700 16px/1.2 \"Atkinson Hyperlegible\",system-ui,sans-serif}.ds-btn-go{background:#1d2b3a;color:#f6f1e6;box-shadow:0 1px 1px #1d2b3a1f,0 8px 16px -10px #1d2b3a99}"
+      "css": ".ds-btn{display:inline-flex;min-height:48px;align-items:center;padding:0 22px;border:0;border-radius:12px;font:600 16px/1.2 \"Inter Variable\",system-ui,sans-serif}.ds-btn-go{background:#DBFF00;color:#2B2B2B}"
     },
     {
       "name": "Quiet Button",
       "kind": "button",
       "refersTo": "button-quiet",
-      "description": "Every other action: an outline pill.",
+      "description": "Every other action: a chalk outline.",
       "html": "<button class=\"ds-btn ds-btn-quiet\">Get your brief again</button>",
-      "css": ".ds-btn{display:inline-flex;min-height:48px;align-items:center;padding:0 22px;border:0;border-radius:999px;font:700 16px/1.2 \"Atkinson Hyperlegible\",system-ui,sans-serif}.ds-btn-quiet{background:transparent;color:#1d2b3a;box-shadow:inset 0 0 0 1.6px #1d2b3a}"
+      "css": ".ds-btn{display:inline-flex;min-height:48px;align-items:center;padding:0 22px;border:0;border-radius:12px;font:600 16px/1.2 \"Inter Variable\",system-ui,sans-serif}.ds-btn-quiet{background:transparent;color:#F1E9E9;box-shadow:inset 0 0 0 1.5px #F1E9E952}"
     },
     {
       "name": "Problem Row",
       "kind": "list-item",
       "refersTo": "problem-row",
-      "description": "One problem in the group's own words on a ruled line, with a drawn dot; ready ones get a highlighter dot and a pencil note.",
-      "html": "<button class=\"ds-prob\"><span class=\"ds-dot\"></span><span>Donations arrive in a rush and nobody knows what's in the crates<b>ready to go</b></span></button>",
-      "css": ".ds-prob{display:grid;grid-template-columns:20px 1fr;gap:12px;width:340px;padding:12px 2px;border:0;border-bottom:1px solid #1d2b3a1f;background:none;text-align:left;font:16px/1.45 \"Atkinson Hyperlegible\",sans-serif;color:#1d2b3a}.ds-dot{width:18px;height:18px;border:1.7px solid #1d2b3a;border-radius:50% 46% 52% 48%;background:#e4f26a}.ds-prob b{display:block;color:#b23c17;font:700 20px/1.2 Caveat,cursive}"
+      "description": "One problem in the group's own words on a ruled line, with a square dot that fills lime on hover.",
+      "html": "<button class=\"ds-prob\"><span class=\"ds-dot\"></span><span>Finding drivers for the early-morning pickups.</span></button>",
+      "css": ".ds-prob{display:grid;grid-template-columns:20px 1fr;gap:12px;width:340px;padding:13px 4px;border:0;border-bottom:1px solid #F1E9E91f;background:transparent;color:#F1E9E9;font:400 15.5px/1.45 \"Inter Variable\",system-ui,sans-serif;text-align:left}.ds-dot{width:18px;height:18px;margin-top:2px;border-radius:5px;box-shadow:inset 0 0 0 1.5px #F1E9E952}.ds-prob:hover .ds-dot{background:#DBFF00;box-shadow:none}"
     },
     {
       "name": "Filter",
       "kind": "chip",
       "refersTo": "filter-on",
-      "description": "Board filters; the selected one is filled ink.",
-      "html": "<button class=\"ds-f ds-on\">All</button> <button class=\"ds-f\">Food</button>",
-      "css": ".ds-f{min-height:42px;padding:0 18px;border:0;border-radius:999px;background:transparent;box-shadow:inset 0 0 0 1.4px #1d2b3a5c;font:700 15px \"Atkinson Hyperlegible\",sans-serif;color:#1d2b3a}.ds-on{background:#1d2b3a;color:#f6f1e6;box-shadow:none}"
+      "description": "Area filters on the board; the selected one is lime.",
+      "html": "<span class=\"ds-f ds-on\">Everything</span><span class=\"ds-f\">Sport</span>",
+      "css": ".ds-f{display:inline-flex;min-height:42px;align-items:center;margin-right:8px;padding:0 18px;border-radius:12px;box-shadow:inset 0 0 0 1.5px #F1E9E952;color:#F1E9E9;font:600 15px \"Inter Variable\",system-ui,sans-serif}.ds-on{background:#DBFF00;color:#2B2B2B;box-shadow:none}"
     },
     {
       "name": "Input",
       "kind": "input",
       "refersTo": "input",
-      "description": "White field on paper; focus is an ink border with a highlighter ring.",
-      "html": "<input class=\"ds-in\" placeholder=\"Who is it for?\">",
-      "css": ".ds-in{min-height:50px;padding:12px 16px;border:1.6px solid #1d2b3a5c;border-radius:8px;background:#fffefb;font:16px \"Atkinson Hyperlegible\",sans-serif;color:#1d2b3a}.ds-in:focus{outline:none;border-color:#1d2b3a;box-shadow:0 0 0 4px #e4f26a}"
+      "description": "A dark well with a chalk line; lime border and ring on focus.",
+      "html": "<input class=\"ds-in\" placeholder=\"Someone you could actually show it to\">",
+      "css": ".ds-in{width:320px;min-height:50px;padding:12px 16px;border:1.5px solid #F1E9E952;border-radius:12px;background:#232222;color:#F1E9E9;font:16px \"Inter Variable\",system-ui,sans-serif}.ds-in::placeholder{color:#A69D9D}"
     },
     {
       "name": "Panel",
       "kind": "card",
       "refersTo": "panel",
-      "description": "A working panel laid on the notebook page.",
-      "html": "<div class=\"ds-panel\"><h3>Your brief</h3><p>Who it's for, what you're making, and what AI does.</p></div>",
-      "css": ".ds-panel{max-width:340px;padding:22px;border-radius:10px;background:#fffdf8;box-shadow:inset 0 0 0 1px #1d2b3a1f,0 1px 2px #1d2b3a14,0 12px 26px -20px #1d2b3a80;color:#1d2b3a;font:15px/1.55 \"Atkinson Hyperlegible\",sans-serif}.ds-panel h3{margin:0 0 6px;font:600 24px Fraunces,Georgia,serif}.ds-panel p{margin:0}"
+      "description": "A working panel on the charcoal ground.",
+      "html": "<div class=\"ds-panel\"><h3>Your brief</h3><p>Harbourside Food Rescue</p></div>",
+      "css": ".ds-panel{width:320px;padding:22px 24px;border-radius:24px;background:#343232;color:#F1E9E9;font:15px/1.5 \"Inter Variable\",system-ui,sans-serif}.ds-panel h3{margin:0 0 6px;font:500 21px \"Inter Tight Variable\",system-ui,sans-serif;letter-spacing:-.025em}.ds-panel p{margin:0;color:#C9C0C0}"
     },
     {
       "name": "Stage Steps",
       "kind": "navigation",
-      "refersTo": "button-go",
-      "description": "The three project stages in the header, each with a drawn number disc; the current one is a highlighter pill.",
-      "html": "<nav class=\"ds-steps\"><span class=\"ds-s ds-cur\"><b>1</b>Brief</span><span class=\"ds-s\"><b>2</b>Make &amp; try</span></nav>",
-      "css": ".ds-steps{display:flex;gap:6px}.ds-s{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px 0 7px;border-radius:999px;font:700 15px \"Atkinson Hyperlegible\",sans-serif;color:#3e4a57}.ds-s b{display:inline-grid;place-items:center;width:30px;height:30px;border:1.6px solid #1d2b3a;border-radius:52% 48% 50% 46%;font-size:14px}.ds-cur{background:#e4f26a;color:#1d2b3a}.ds-cur b{background:#1d2b3a;color:#f6f1e6}"
+      "refersTo": "filter-on",
+      "description": "The three stages in the header, with square number badges; the current one is lime.",
+      "html": "<span class=\"ds-st ds-cur\"><b>1</b>Brief</span><span class=\"ds-st\"><b>2</b>Make &amp; try</span>",
+      "css": ".ds-st{display:inline-flex;min-height:44px;align-items:center;gap:10px;padding:0 16px 0 7px;border-radius:14px;color:#C9C0C0;font:600 15px \"Inter Variable\",system-ui,sans-serif}.ds-st b{display:inline-grid;width:30px;height:30px;place-items:center;border-radius:8px;box-shadow:inset 0 0 0 1.5px #F1E9E952}.ds-cur{background:#DBFF00;color:#2B2B2B}.ds-cur b{background:#2B2B2B;color:#DBFF00;box-shadow:none}"
     }
   ],
   "narrative": {
-    "northStar": "A field notebook",
-    "overview": "Everything a future builder sees should feel like a notebook someone carries to a community group: ink drawings, notes in red pencil, a highlighter for what's been chosen, all on dotted paper. The person working is present on the page, and the record at the end reads like the notebook's last pages, written up.",
+    "northStar": "Tiles on charcoal",
+    "overview": "The look comes straight from the Agents for Change artwork: a charcoal ground, chalk-white type, and rounded-square tiles in lime, pink and chalk with a shape cut out so the ground shows through. The tiles turn a quarter when you reach for them. Everything else is quiet: a clean neo-grotesque, dark panels to work in, and one light page at the end, the record, so it prints.",
     "keyCharacteristics": [
-      "Ink line drawings of people doing things (Open Doodles by Pablo Stanley, CC0), one per group, plus the hero and the empty Make page.",
-      "A warm serif for titles (Fraunces) over a highly legible reading face (Atkinson Hyperlegible), with Caveat only for short notes.",
-      "Ink is the thing you press. Highlighter marks what is chosen or current. Red pencil is the voice of the person working.",
-      "Dotted paper everywhere, with white panels laid on it for working."
+      "Three tile shapes from the artwork (bite, gear, molecule), drawn from its own paths, at quarter-turns.",
+      "Inter Tight for the name and headings, Inter for reading.",
+      "Lime is what you press and what is chosen. Pink is people and their words, and the soft alerts.",
+      "Corners are a quarter of the height, like the tiles."
     ],
     "rules": [
       {
-        "name": "The One Ink Button Rule",
-        "body": "Each screen has one filled ink button that matters most. Others are outline pills.",
+        "name": "The One Lime Button Rule",
+        "body": "Each view has one lime button that matters most. Others are chalk outlines.",
         "section": "colors"
       },
       {
-        "name": "The Highlighter Means Chosen Rule",
-        "body": "Highlighter marks what's current, chosen or ready. It never decorates something the person hasn't picked or reached.",
+        "name": "The Lime Means Chosen Rule",
+        "body": "Lime marks what you press, what's current or what's picked. It never decorates something the person hasn't reached.",
         "section": "colors"
       },
       {
-        "name": "The Short Notes Rule",
-        "body": "Caveat is for notes of a few words. Never a paragraph, a label or a button.",
+        "name": "The Pink Is People Rule",
+        "body": "Pink carries other people's words and gentle warnings. It is never something you press.",
+        "section": "colors"
+      },
+      {
+        "name": "The Emphasis Is Lime Rule",
+        "body": "Headline emphasis is the same face in lime. No italics, highlighter strokes or gradient text.",
         "section": "typography"
       },
       {
-        "name": "The Emphasis Is Highlighter Rule",
-        "body": "Headline emphasis is a highlighter stroke behind the words, not italic and not a second colour.",
+        "name": "The No Kicker Rule",
+        "body": "No small labels above headings. A heading carries its own weight.",
         "section": "typography"
       },
       {
-        "name": "The Paper Stays Flat Rule",
-        "body": "Group cards on the board have no box or shadow. Only working panels lift.",
+        "name": "The Board Stays Flat Rule",
+        "body": "Group entries on the board have no box or shadow. Only working panels lift.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "Do keep one filled ink button per view.",
-      "Do use highlighter only for what is chosen, current or ready.",
-      "Do keep pencil notes to a few words.",
-      "Do keep the dot grid on the page ground.",
-      "Do give every new group a drawing in ink and highlighter."
+      "Do keep one lime button per view.",
+      "Do use lime only for what is pressed, chosen or current.",
+      "Do put people's words in pink.",
+      "Do keep corners at a quarter of the height.",
+      "Do give a new group its three tiles in ORG_TILES."
     ],
     "donts": [
-      "Don't use red pencil for buttons, links or anything you press.",
-      "Don't set paragraphs in Caveat or use it below 20px.",
+      "Don't use pink for buttons, links or anything you press.",
+      "Don't add a kicker or eyebrow above a heading.",
       "Don't put a box or shadow round board entries.",
-      "Don't add a second accent colour. Groups are told apart by their drawings, not tints.",
-      "Don't use sparkles, asterisks, glowing gradients or any \"magic\" AI imagery."
+      "Don't invent new tile shapes; use the artwork's three.",
+      "Don't use sparkles, glows, gradient text or any \"magic\" AI imagery."
     ]
   }
 }

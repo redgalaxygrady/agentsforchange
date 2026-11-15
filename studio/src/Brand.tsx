@@ -1,25 +1,15 @@
 import './brand.css';
+import { Tile, type TileTone } from './Tiles';
 
-/** The mark: an inked thumbprint on a dab of highlighter. Someone made this, by hand. */
-export function Mark({ size = 28, className }: { size?: number; className?: string }) {
-  return <svg className={className} width={size} height={size} viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-    <path d="M33 4c15 0 27 11 27 27 0 16-12 29-28 29C16 60 4 48 5 32 6 16 18 4 33 4z" fill="#e4f26a"/>
-    <g fill="none" stroke="#1d2b3a" strokeWidth="2.8" strokeLinecap="round">
-      <path d="M32 22c-6 0-10.5 4.6-10.5 10.4 0 4.3 2 8 5.2 10.3"/>
-      <path d="M32 27c-3.2 0-5.6 2.5-5.6 5.6 0 2.4 1.1 4.4 2.9 5.7"/>
-      <path d="M32 32.2c0 2.6.9 5.2 2.6 7.2"/>
-      <path d="M37 24.6c2.9 1.8 4.9 5 4.9 8.6 0 4.4-1.6 8-4.1 10.6"/>
-      <path d="M36.6 30.4c.6 1 1 2.1 1 3.4 0 2.6-.7 4.9-2 6.8"/>
-      <path d="M26.2 17.6c1.8-.7 3.7-1.1 5.8-1.1 8.7 0 15.6 7.2 15.6 16.2 0 3.5-.7 6.8-2 9.8"/>
-      <path d="M21 21c-2.6 2.9-4.2 6.8-4.2 11.2 0 4.8 1.7 9 4.6 12.1"/>
-    </g>
-  </svg>;
+/** The mark: the lime bite tile that opens the Agents for Change lockup. */
+export function Mark({ size = 28, className, tone = 'lime' }: { size?: number; className?: string; tone?: TileTone }) {
+  return <Tile shape="bite" tone={tone} size={size} className={className}/>;
 }
 
-/** The mark and the wordmark, set in Fraunces. Size follows the parent's font size. */
-export function Wordmark({ light = false }: { light?: boolean }) {
-  return <span className={`ac-wordmark${light ? ' is-light' : ''}`}>
+/** The mark and the wordmark, set in Inter Tight like the artwork. Size follows the parent's font size. */
+export function Wordmark() {
+  return <span className="ac-wordmark">
     <Mark className="ac-wordmark-mark"/>
-    <span className="ac-wordmark-word">Agents For Change</span>
+    <span className="ac-wordmark-word">Agents for Change</span>
   </span>;
 }

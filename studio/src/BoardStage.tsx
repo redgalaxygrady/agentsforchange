@@ -5,7 +5,7 @@ import { OrgLogo } from './Logos';
 import type { LaunchState } from './launchModel';
 import { EXAMPLE_HASH } from './exampleProject';
 import { AREAS, ORGS, OWN_ID, orgFor, PARTNER_SIGNUP_URL, type Area, type Org } from './orgs';
-import { Doodle, HeroSketch } from './Sketch';
+import { EmptyTile, HeroTiles, OrgTiles, Tile } from './Tiles';
 
 export interface BoardProps {
   state: LaunchState;
@@ -32,7 +32,7 @@ function Replace({ name, current, onYes, onNo, onDownload }: { name: string; cur
 
 function Card({ org, current, pending, onPick, replace }: { org: Org; current: boolean; pending: boolean; onPick: (challenge?: string) => void; replace: ReactNode }) {
   return <article className={`ac-card${current ? ' is-current' : ''}`} id={`ac-org-${org.id}`} aria-labelledby={`ac-org-${org.id}-name`}>
-    <div className="ac-card-stage"><Doodle id={org.id}/></div>
+    <div className="ac-card-stage"><OrgTiles id={org.id}/></div>
     <header className="ac-card-head">
       <OrgLogo id={org.id} size={52}/>
       <div>
@@ -90,15 +90,23 @@ export function BoardStage({ state, titleRef, busy, onChoose, onContinue, onDown
           </div>
         </div>
         <figure className="ac-hero-art">
-          <HeroSketch/>
+          <HeroTiles/>
+          <figcaption>
+            <ol className="ac-hero-how" aria-label="How it works">
+              <li>Talk to the people it’s for, first</li>
+              <li>AI drafts and sorts</li>
+              <li>I check it and decide</li>
+              <li>Try it with a real person</li>
+            </ol>
+          </figcaption>
         </figure>
       </div>
     </section>
 
     <section className="ac-parents" aria-labelledby="ac-parents-title">
       <div className="ac-parents-copy">
-        <p className="ac-kicker">For parents and whānau</p>
-        <h2 id="ac-parents-title">Real work with AI, in your community, in four days</h2>
+        <h2 id="ac-parents-title">For parents and whānau</h2>
+        <p className="ac-parents-big">Real work with AI, in your community, in four days.</p>
         <p className="ac-parents-lede">Employers want young people who can use AI to solve real problems. School mostly prepares them for exams, and can’t easily give every teen a real project with a local group. That’s what a sprint does.</p>
         <a className="ac-btn ac-btn--quiet" href={EXAMPLE_HASH}>See a finished record <ArrowRight size={17}/></a>
         <p className="ac-parents-note">A made-up example of what a future builder leaves with.</p>
@@ -113,7 +121,10 @@ export function BoardStage({ state, titleRef, busy, onChoose, onContinue, onDown
 
     {featured && <section className="ac-meet" aria-labelledby="ac-meet-title">
       <figure className="ac-meet-photo">
-        <Avatar contact={featured.contact} size={168} orgId={featured.id}/>
+        <Avatar contact={featured.contact} size={132} orgId={featured.id}/>
+        <Tile shape="gear" tone="lime" turn={1}/>
+        <Tile shape="bite" tone="pink"/>
+        <Tile shape="molecule" tone="chalk"/>
       </figure>
       <div className="ac-meet-copy">
         <blockquote><h2 id="ac-meet-title">“{featured.contact.quote}”</h2></blockquote>
@@ -135,7 +146,7 @@ export function BoardStage({ state, titleRef, busy, onChoose, onContinue, onDown
       <div className="ac-cards">
         {shown.map((org) => <Card key={org.id} org={org} current={current?.id === org.id} pending={pending?.id === org.id && pending.from === 'sheet'} onPick={(challenge) => pick(org.id, challenge)} replace={replace(org.name)}/>)}
         <article className={`ac-card ac-card--own${current?.id === OWN_ID ? ' is-current' : ''}`} id="ac-org-own" aria-labelledby="ac-org-own-name">
-          <Doodle id={OWN_ID} className="ac-doodle ac-doodle--own"/>
+          <div className="ac-card-stage"><span className="ac-org-tiles" aria-hidden="true"><Tile shape="molecule" tone="chalk" size={56}/><Tile shape="bite" tone="lime" turn={1} size={56}/><EmptyTile/></span></div>
           <header className="ac-card-head">
             <OrgLogo id={OWN_ID} size={52}/>
             <div><h3 id="ac-org-own-name">Bring your own group</h3><p>A club, a shop, a charity, a school group</p></div>

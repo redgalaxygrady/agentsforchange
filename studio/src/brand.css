@@ -1,5 +1,4 @@
-/* The mark and wordmark: an inked thumbprint on a dab of highlighter, and the name in Fraunces like the title on a notebook. */
-.ac-wordmark { display: inline-flex; align-items: center; gap: .34em; color: #1d2b3a; line-height: 1; white-space: nowrap; }
-.ac-wordmark.is-light { color: #f6f1e6; }
-.ac-wordmark-mark { width: 1.4em; height: 1.4em; flex: none; margin-block: -.2em; overflow: visible; }
-.ac-wordmark-word { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: .95em; letter-spacing: -.015em; }
+/* The mark and wordmark: the lime bite tile and the name in Inter Tight, as in the brand artwork. */
+.ac-wordmark { display: inline-flex; align-items: center; gap: .42em; color: #F1E9E9; line-height: 1; white-space: nowrap; }
+.ac-wordmark-mark { width: 1.25em; height: 1.25em; flex: none; }
+.ac-wordmark-word { font-family: 'Inter Tight Variable', 'Inter Variable', system-ui, sans-serif; font-weight: 500; font-size: .9em; letter-spacing: -.02em; }

@@ -1,231 +1,245 @@
 ---
-name: Agents For Change
-description: A field notebook where young people pick a real problem from a local group and show, page by page, how they worked with AI to help.
+name: Agents for Change
+description: A charcoal workspace of rounded-square tiles where young people pick a real problem from a local group and show how they worked with AI to help.
 colors:
-  ink: "#1d2b3a"
-  ink-2: "#3e4a57"
-  muted: "#5a6470"
-  highlighter: "#e4f26a"
-  highlighter-soft: "#f3f8c9"
-  pencil: "#b23c17"
-  leaf: "#2f7a45"
-  paper: "#f6f1e6"
-  card: "#fffdf8"
-  shade: "#efe9dc"
-  line: "#1d2b3a1f"
-  line-strong: "#1d2b3a5c"
+  ground: "#2B2B2B"
+  panel: "#343232"
+  panel-2: "#3B3838"
+  well: "#232222"
+  chalk: "#F1E9E9"
+  chalk-2: "#C9C0C0"
+  muted: "#B5ACAC"
+  placeholder: "#A69D9D"
+  lime: "#DBFF00"
+  lime-hover: "#E6FF4D"
+  on-lime: "#3F4500"
+  pink: "#FFB5B5"
+  line: "#F1E9E91f"
+  line-strong: "#F1E9E952"
+  wash: "#F1E9E90f"
+  record-ink: "#2B2B2B"
+  record-muted: "#5C5555"
+  record-card: "#F8F4F4"
+  record-shade: "#E8DEDE"
+  record-pink: "#F7D4D4"
 typography:
   display:
-    fontFamily: "Fraunces, Georgia, serif"
-    fontSize: "clamp(44px, 5.4vw, 80px)"
-    fontWeight: 600
-    lineHeight: 1.02
-    letterSpacing: "-0.025em"
+    fontFamily: "Inter Tight Variable, Inter Variable, system-ui, sans-serif"
+    fontSize: "clamp(48px, 6vw, 92px)"
+    fontWeight: 500
+    lineHeight: 0.98
+    letterSpacing: "-0.034em"
   headline:
-    fontFamily: "Fraunces, Georgia, serif"
-    fontSize: "clamp(36px, 4.2vw, 56px)"
-    fontWeight: 600
-    lineHeight: 1.05
+    fontFamily: "Inter Tight Variable, Inter Variable, system-ui, sans-serif"
+    fontSize: "clamp(40px, 4.8vw, 68px)"
+    fontWeight: 500
+    lineHeight: 1
+    letterSpacing: "-0.04em"
   title:
-    fontFamily: "Fraunces, Georgia, serif"
-    fontSize: "24px"
-    fontWeight: 600
-    lineHeight: 1.15
+    fontFamily: "Inter Tight Variable, Inter Variable, system-ui, sans-serif"
+    fontSize: "28px"
+    fontWeight: 500
+    lineHeight: 1.1
+    letterSpacing: "-0.03em"
   quote:
-    fontFamily: "Fraunces, Georgia, serif"
+    fontFamily: "Inter Tight Variable, Inter Variable, system-ui, sans-serif"
     fontSize: "19px"
     fontWeight: 400
-    fontStyle: "italic"
-    lineHeight: 1.4
+    lineHeight: 1.38
+    letterSpacing: "-0.01em"
   body:
-    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
+    fontFamily: "Inter Variable, system-ui, sans-serif"
     fontSize: "16px"
     fontWeight: 400
     lineHeight: 1.55
   label:
-    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
-    fontSize: "14px"
-    fontWeight: 700
+    fontFamily: "Inter Variable, system-ui, sans-serif"
+    fontSize: "15px"
+    fontWeight: 600
     lineHeight: 1.35
-  pencil:
-    fontFamily: "Caveat, cursive"
-    fontSize: "22px"
-    fontWeight: 700
-    lineHeight: 1.1
+  small:
+    fontFamily: "Inter Variable, system-ui, sans-serif"
+    fontSize: "13px"
+    fontWeight: 400
+    lineHeight: 1.5
 rounded:
-  input: "8px"
-  panel: "10px"
-  dialog: "12px"
-  pill: "999px"
+  mark: "6px"
+  badge: "8px"
+  small: "10px"
+  control: "12px"
+  control-big: "14px"
+  inset: "16px"
+  bar: "20px"
+  panel: "24px"
+  feature: "28px"
+  tile: "25%"
 spacing:
   gutter-phone: "16px"
   gutter: "32px"
-  block: "30px"
+  block: "32px"
+  section: "56px"
 components:
   button-go:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.paper}"
-    rounded: "{rounded.pill}"
+    backgroundColor: "{colors.lime}"
+    textColor: "{colors.ground}"
+    rounded: "{rounded.control}"
     padding: "0 22px"
     height: "48px"
   button-go-big:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.paper}"
-    rounded: "{rounded.pill}"
+    backgroundColor: "{colors.lime}"
+    textColor: "{colors.ground}"
+    rounded: "{rounded.control-big}"
     padding: "0 28px"
     height: "56px"
   button-quiet:
     backgroundColor: "transparent"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.pill}"
+    textColor: "{colors.chalk}"
+    rounded: "{rounded.control}"
     padding: "0 22px"
     height: "48px"
   problem-row:
     backgroundColor: "transparent"
-    textColor: "{colors.ink}"
-    padding: "12px 2px"
+    textColor: "{colors.chalk}"
+    padding: "13px 4px"
   problem-row-hover:
-    backgroundColor: "{colors.highlighter-soft}"
+    backgroundColor: "{colors.wash}"
   filter-on:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.paper}"
-    rounded: "{rounded.pill}"
+    backgroundColor: "{colors.lime}"
+    textColor: "{colors.ground}"
+    rounded: "{rounded.control}"
     height: "42px"
   input:
-    backgroundColor: "#fffefb"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.input}"
+    backgroundColor: "{colors.well}"
+    textColor: "{colors.chalk}"
+    rounded: "{rounded.control}"
     padding: "12px 16px"
   panel:
-    backgroundColor: "{colors.card}"
-    textColor: "{colors.ink}"
+    backgroundColor: "{colors.panel}"
+    textColor: "{colors.chalk}"
     rounded: "{rounded.panel}"
   launch-band:
-    backgroundColor: "{colors.highlighter}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.panel}"
+    backgroundColor: "{colors.lime}"
+    textColor: "{colors.ground}"
+    rounded: "{rounded.feature}"
 ---
 
-# Design System: Agents For Change
+# Design System: Agents for Change
 
 ## Overview
 
-**Creative North Star: "A field notebook"**
+**Creative North Star: "Tiles on charcoal"**
 
-Everything a future builder sees should feel like a notebook someone carries to a community group: ink drawings, notes in red pencil, a highlighter for what's been chosen, all on dotted paper. The person working is present on the page. Their notes sit beside the drawings, and the record at the end reads like the notebook's last pages, written up.
+The look comes straight from the Agents for Change artwork: a charcoal ground, chalk-white type, and rounded-square tiles in lime, pink and chalk, each with a shape cut out so the ground shows through. The tiles stand for the pieces of the work (people, tools, checking, trying), and they turn a quarter when you reach for them. Everything else is quiet: a clean neo-grotesque, dark panels to work in, and one light page at the end, the record, so it prints.
 
 Key characteristics:
 
-- Ink line drawings of people doing things (Open Doodles by Pablo Stanley, CC0), one per group, plus one for the hero and one for the empty Make page.
-- A warm serif for titles over a highly legible reading face, with a handwritten face only for short notes.
-- Ink is the thing you press. Highlighter marks what's chosen or current. Red pencil is the voice of the person working.
-- Dotted paper everywhere, with white panels laid on it for working.
+- Three tile shapes from the artwork (the bite, the gear and the molecule), drawn from the artwork's own paths in `src/Tiles.tsx`, at quarter-turns.
+- Inter Tight for the name and headings, Inter for reading. Medium weight, tight tracking, nothing ornamental.
+- Lime is what you press and what's chosen. Pink is people and their words, and the soft alerts.
+- Corners are a quarter of the height, like the tiles: 12px on a 48px button, 24px on a panel.
 
 ## Colors
 
-A small palette: ink and paper, one highlighter, one red pencil.
+The artwork's four colours, plus three charcoal steps for working surfaces.
 
 ### Primary
-- **Ink** (ink): text, line drawings, the main button, the selected filter, focus rings, the record's masthead.
-- **Highlighter** (highlighter): the current step, the "ready to go" dot, the highlighted words in a headline, the chosen signup row, the launch panel on the Brief, the latest version badge in the record. Always with ink text.
+- **Lime** (lime): the main button, the current stage, the selected filter, the chosen problem, the latest version badge, the "Next" label, emphasis in a page title, focus rings, text selection. Always with charcoal text on it. On the lime launch panel, secondary text is on-lime (#3F4500).
 
 ### Secondary
-- **Red pencil** (pencil): handwritten notes only (the hero's notes, "ready to go", "Next", dialog tags). Darkened to pass contrast on paper. Never a button or a link.
-- **Leaf** (leaf): the "Saved" status only.
+- **Pink** (pink): a person's own words (every quote from a contact), the "Check the facts" badge, the version count, and soft alerts (save problems, the "start fresh?" check, the made-up example note). Never a button.
 
 ### Neutral
-- **Paper** (paper): the page ground, always with the dot grid (`--ac-dots`, 1px dots every 26px).
-- **Card** (card): panels laid on the paper: blocks, contact, versions, side cards.
-- **Shade** (shade): hover on quiet things, the record's footer, empty thumbnails.
-- **Ink-2, Muted** (ink-2, muted): secondary text and labels.
-- **Line, Line-strong** (line, line-strong): ruled lines between problems, input borders.
+- **Ground** (ground): the page.
+- **Panel, Panel-2** (panel, panel-2): working panels, and insets inside them.
+- **Well** (well): fields you write into, drop zones, the sheet table, the dialog summary.
+- **Chalk, Chalk-2, Muted, Placeholder**: text, from headings down to placeholder. All pass 4.5:1 on every charcoal step.
+- **Line, Line-strong, Wash**: rules, outlines on quiet controls, hover fills.
+
+### The record
+The record is chalk paper (#F1E9E9) with charcoal ink, a lime band under the masthead, lime on the latest version badge, and pink behind the maker's own words. The mark at its foot is the charcoal tile.
 
 ### Named Rules
-**The One Ink Button Rule.** Each screen has one filled ink button that matters most. Others are outline pills.
+**The One Lime Button Rule.** Each view has one lime button that matters most. Others are chalk outlines.
 
-**The Highlighter Means Chosen Rule.** Highlighter marks what's current, chosen or ready. It never decorates something the person hasn't picked or reached.
+**The Lime Means Chosen Rule.** Lime marks what you press, what's current or what's picked. It never decorates something the person hasn't reached.
+
+**The Pink Is People Rule.** Pink carries other people's words and gentle warnings. It is never something you press.
 
 ## Typography
 
-**Display Font:** Fraunces 600 (with Georgia)
-**Quote Font:** Fraunces 400 italic
-**Body Font:** Atkinson Hyperlegible
-**Note Font:** Caveat 700
+**Display and heading font:** Inter Tight (variable), weight 500
+**Body font:** Inter (variable, optical sizes)
 
-**Character:** Fraunces is a warm, slightly old-style serif that reads like a printed field guide. Atkinson Hyperlegible was designed for low-vision readers and keeps every form field and paragraph plain to read. Caveat is a pencil note in the margin.
+**Character:** The artwork sets the name in a tight neo-grotesque, and Inter Tight is the closest open match: single-storey g, slanted t terminals, tight fit. Inter carries every paragraph and field, so long answers stay easy to read.
 
 ### Hierarchy
-- **Display** (600, clamp(44px, 5.4vw, 80px), 1.02): the landing headline, with the last words highlighted.
-- **Headline** (600, clamp(36px, 4.2vw, 56px)): stage titles.
-- **Title** (600, 24px to 27px): card and block titles.
-- **Quote** (400 italic, 19px): a contact speaking in their own words.
+- **Display** (500, clamp(48px, 6vw, 92px), 0.98): the landing headline, with the last words in lime.
+- **Headline** (500, clamp(40px, 4.8vw, 68px)): stage titles and the board heading.
+- **Title** (500, 21px to 28px): group names, block headings, version titles.
+- **Quote** (Inter Tight 400, 19px to 42px, pink): a contact in their own words.
 - **Body** (400, 16px, 1.55): everything a person reads or types.
-- **Label** (700, 14px to 15px): field labels, button text, dt.
-- **Pencil** (Caveat 700, 20px to 30px): handwritten notes.
+- **Label** (600, 14px to 15px): field labels, buttons, filters, dt.
 
 ### Named Rules
-**The Short Notes Rule.** Caveat is for notes of a few words. Never a paragraph, a label or a button.
+**The Emphasis Is Lime Rule.** Headline emphasis is the same face in lime. No italics, highlighter strokes or gradient text.
 
-**The Emphasis Is Highlighter Rule.** Headline emphasis is a highlighter stroke behind the words, not italic and not a second colour.
+**The No Kicker Rule.** No small labels above headings. A heading carries its own weight.
 
 ## Layout
 
-Content sits in a 1240px column with 32px gutters (16px on phones). The landing is a two-column hero (copy and the annotated drawing) that stacks below 1100px; below 820px the order is headline, drawing, lede, buttons. Group cards are notebook entries with no box: drawing, name, what they do, the contact's quote, then a ruled list of problems. The bring-your-own card spans the full width with a dashed rule under it.
+Content sits in a 1240px column with 32px gutters (16px on phones). The landing hero is the headline beside the artwork's 4 by 3 tile grid, with the four how-it-works steps captioned under it; below 820px the order is headline, one row of four tiles, the steps in two columns, lede, button. Group entries are open columns (three tiles, name, what they do, the contact's quote in pink, then their problems as a ruled list), with no box round them. Working pages use dark panels on the ground.
 
 ## Elevation & Depth
 
-Mostly flat, like paper. Panels lift a little off the page so the working area reads as a sheet laid on the notebook.
+Depth on charcoal comes from the surface steps (ground, panel, panel-2, well) and thin chalk lines, not from shadows.
 
 ### Shadow Vocabulary
-- **Panel** (`0 1px 2px #1d2b3a14, 0 12px 26px -20px #1d2b3a80`): blocks, versions, side cards.
-- **Press** (`0 1px 1px #1d2b3a1f, 0 8px 16px -10px #1d2b3a99`): the main button at rest.
-- **Pressed** (`inset 0 2px 4px #0000004d`): any button while held.
+- **panel** (`0 20px 40px -28px #000000cc`): the contact card, the own-group form and versions, which lift slightly.
+- **dialog** (`0 30px 80px -10px #000000b3`): the brief dialog.
+- **paper** (`drop-shadow(0 20px 32px #00000073)`): the light record sitting on the dark page.
 
 ### Named Rules
-**The Paper Stays Flat Rule.** Group cards on the board have no box or shadow. Only working panels lift.
+**The Board Stays Flat Rule.** Group entries on the board have no box or shadow. Only working panels lift.
 
 ## Shapes
 
-Pills for buttons, chips and filters. 8px for inputs, 10px for panels, 12px for dialogs. Step discs and problem dots are slightly uneven circles (`border-radius: 52% 48% 50% 46%`) so they look drawn.
+Rounded squares throughout, with the corner a quarter of the side: tiles (25%), avatars (25%), stage numbers, step badges, ticks, problem dots, buttons and fields. No pills and no circles, except the groups' own logos, which are theirs.
 
 ## Components
 
 ### Buttons
-- **Go:** ink pill with paper text and the press shadow.
-- **Quiet:** transparent pill with a 1.6px ink ring; hover fills with soft highlighter.
-- **Hover / Active:** lifts 2px on hover; sinks 1px with an inset shadow while pressed. Focus shows a 3px ink outline.
+Lime fill with charcoal text for the main action (48px, 12px corners; 56px and 14px for the big one). Quiet buttons are a 1.5px chalk outline that brightens on hover. On the lime launch panel the main button flips to charcoal with lime text. Trailing arrows nudge right on hover.
 
 ### Problem rows
-The clickable unit of the board: one problem in the group's own words, on a ruled line with a drawn dot and an arrow. A ready problem has a highlighter dot and "ready to go" in red pencil. Hover sweeps a highlighter stroke across the row.
+A ruled line, a square outline dot that fills lime on hover, the problem in the group's words, and an arrow that turns lime.
 
 ### Chips and filters
-Outline pills. A selected filter is filled ink with paper text.
+12px-corner outlines. A selected filter or a pressed chip is lime with charcoal text.
 
 ### Cards
-- **Board entries:** no box. The group's drawing, then name and logo, what they do, the contact's quote in Fraunces italic, and "Problems they'd like help with" in red pencil above the ruled list.
-- **Working panels:** card colour, 10px radius, a 1px line ring and the panel shadow.
+Panels are panel (#343232) with 24px corners. Insets inside them (the job note, the Try it area, sources) are panel-2 with 16px to 18px corners.
 
 ### Inputs / Fields
-White on paper, a 1.6px line-strong border, 8px radius. Focus: ink border and a 4px highlighter ring. Labels are bold body text above the field.
+Wells (#232222) with a 1.5px line-strong border and 12px corners. Focus: lime border and a soft lime ring. The caret is lime.
 
 ### Navigation
-A sticky paper header with a 1.5px ink rule under it: the wordmark, the group's name, and three stage buttons with drawn number discs. The current stage is a highlighter pill with an ink disc. On phones the stages take the second row.
+A sticky charcoal header with a hairline under it: the tile mark and name, the group's name, and three stage buttons with square number badges. The current stage is lime with a charcoal badge. On phones the stages take the second row.
 
-### Drawings
-`Doodle` in `src/Sketch.tsx` shows a group's drawing from `public/doodles/<group id>.svg` (falls back to `own.svg`). `HeroSketch` is the landing drawing with four red-pencil notes and arrows. The drawings are Open Doodles (CC0) pre-rendered with ink #1d2b3a and highlighter #e4f26a. A new group needs a new drawing: render another Open Doodle with the same two colours, or draw one in the same line style.
+### Tiles
+`Tile` draws one of the three artwork shapes in lime, pink, chalk or charcoal (ink) at a quarter-turn. `HeroTiles` is the landing grid; it turns into place once on load (staggered, from a quarter back) and each tile turns on hover. `OrgTiles` gives each group three tiles, keyed by id in `ORG_TILES`, falling back to a set picked from the id; they turn when you hover the entry. `EmptyTile` is a dashed slot for something of yours: your own group, your first version. All turning stops under reduced motion.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep one filled ink button per view.
-- **Do** use highlighter only for what's chosen, current or ready.
-- **Do** keep pencil notes to a few words.
-- **Do** keep the dot grid on the page ground.
-- **Do** give every new group a drawing in ink and highlighter.
+- **Do** keep one lime button per view.
+- **Do** use lime only for what's pressed, chosen or current.
+- **Do** put people's words in pink.
+- **Do** keep corners at a quarter of the height.
+- **Do** give a new group its three tiles in `ORG_TILES`.
 
 ### Don't:
-- **Don't** use red pencil for buttons, links or anything you press.
-- **Don't** set paragraphs in Caveat or use it below 20px.
+- **Don't** use pink for buttons, links or anything you press.
+- **Don't** add a kicker or eyebrow above a heading.
 - **Don't** put a box or shadow round board entries.
-- **Don't** add a second accent colour. Groups are told apart by their drawings, not tints.
-- **Don't** add sparkles, glows or gradients that suggest AI is doing something special.
+- **Don't** invent new tile shapes; use the artwork's three.
+- **Don't** use sparkles, glows, gradient text or any "magic" AI imagery.

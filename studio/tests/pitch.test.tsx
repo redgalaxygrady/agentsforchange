@@ -84,9 +84,9 @@ describe('the example record', () => {
 });
 
 describe('the name', () => {
-  it('is Agents For Change', () => {
-    expect(renderToStaticMarkup(<Wordmark/>)).toContain('Agents For Change');
-    expect(recordHTML(initialLaunch(), {})).toContain('Recorded in Agents For Change');
+  it('is Agents for Change', () => {
+    expect(renderToStaticMarkup(<Wordmark/>)).toContain('Agents for Change');
+    expect(recordHTML(initialLaunch(), {})).toContain('Recorded in Agents for Change');
   });
 
   it('keeps the old saving keys, so work saved under the earlier name still loads', () => {
