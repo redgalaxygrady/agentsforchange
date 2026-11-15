@@ -64,12 +64,12 @@ const EMBLEMS: Record<string, { label: string; art: ReactNode }> = {
   },
 };
 
-/** An organisation's emblem, or a dashed placeholder for one the future builder brings. */
+/** An organisation's emblem, or a dashed slot, shaped like a tile, for one the future builder brings. */
 export function OrgLogo({ id, size = 48, className }: { id: string; size?: number; className?: string }) {
   const emblem = EMBLEMS[id];
   if (!emblem) {
     return <svg className={className} width={size} height={size} viewBox="0 0 48 48" aria-hidden="true">
-      <circle cx="24" cy="24" r="22.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeDasharray="4 3.2"/>
+      <rect x="1" y="1" width="46" height="46" rx="11.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeDasharray="4 3.2"/>
       <path d="M24 16v16M16 24h16" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round"/>
     </svg>;
   }

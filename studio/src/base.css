@@ -1,14 +1,10 @@
-@import '@fontsource/fraunces/latin-600.css';
-@import '@fontsource/fraunces/latin-400-italic.css';
-@import '@fontsource/caveat/latin-700.css';
-@import '@fontsource/atkinson-hyperlegible/latin-400.css';
-@import '@fontsource/atkinson-hyperlegible/latin-400-italic.css';
-@import '@fontsource/atkinson-hyperlegible/latin-700.css';
-:root { color: #1d2b3a; background: #f6f1e6; font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; font-synthesis: none; -webkit-font-smoothing: antialiased; accent-color: #1d2b3a; }
+@import '@fontsource-variable/inter/opsz.css';
+@import '@fontsource-variable/inter-tight/index.css';
+:root { color: #F1E9E9; background: #2B2B2B; color-scheme: dark; font-family: 'Inter Variable', system-ui, sans-serif; font-synthesis: none; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; accent-color: #DBFF00; }
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: #f6f1e6; }
-::selection { background: #e4f26a; color: #1d2b3a; }
+body { margin: 0; background: #2B2B2B; }
+::selection { background: #DBFF00; color: #2B2B2B; }
 button, input, select, textarea { font: inherit; }
 button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
 button { border: 0; background: none; color: inherit; cursor: pointer; }

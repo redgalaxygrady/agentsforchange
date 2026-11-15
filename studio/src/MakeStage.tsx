@@ -3,6 +3,7 @@ import { ArrowRight, ExternalLink, ImagePlus, Link2, PenLine, Plus, FileText, Tr
 import { briefFor, chosenChallenge, orgFor } from './orgs';
 import { nextStep, safeArtifactUrl, versionLabel, type VersionField, type WorkVersion } from './launchModel';
 import type { StageProps } from './stageProps';
+import { EmptyTile, Tile } from './Tiles';
 
 export interface MakeProps extends StageProps {
   images: Record<string, string | undefined>;
@@ -74,7 +75,7 @@ function EmptyWork({ onAdd }: { onAdd: (screenshot?: File) => void }) {
     if (file) onAdd(file);
   };
   return <section className={`ac-empty${drag ? ' is-drag' : ''}`} aria-labelledby="ac-empty-title" onDragOver={(event) => { event.preventDefault(); setDrag(true); }} onDragLeave={() => setDrag(false)} onDrop={(event) => { event.preventDefault(); setDrag(false); take(event.dataTransfer.files); }}>
-    <img className="ac-empty-art" src="/doodles/reading-side.svg" alt="" width="1024" height="768"/>
+    <div className="ac-empty-art" aria-hidden="true"><Tile shape="bite" tone="lime" size={64}/><Tile shape="gear" tone="pink" turn={1} size={64}/><EmptyTile size={64}><Plus size={24}/></EmptyTile></div>
     <h2 id="ac-empty-title">Your first version goes here</h2>
     <p>Make a first version in your AI tool, then bring it back: a screenshot, a link, or a few words about what you made. Rough is good. Version 1 is meant to be improved.</p>
     <div className="ac-empty-actions">
